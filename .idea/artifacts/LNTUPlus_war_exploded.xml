@@ -1,0 +1,33 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="LNTUPlus:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/LNTUPlus_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="LNTUPlus" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.3.18.RELEASE" />
+          <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.12.1" />
+          <element id="library" level="project" name="Maven: com.squareup.okio:okio:2.2.2" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.2.60" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.60" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.14" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
+          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.11.3" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.5" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.0" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="LNTUPlus/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -32,6 +32,7 @@ public class SignAction {
 
     public String sign(String number, String name, String iClass) {
         Gson gson = new Gson();
+//        Gson
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
         SqlSession sqlSession = sqlSessionFactory.openSession();
         int signCourseNo = courseNo(TimeUtils.getTime());
