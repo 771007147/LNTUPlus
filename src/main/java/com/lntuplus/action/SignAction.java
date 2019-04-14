@@ -1,27 +1,18 @@
 package com.lntuplus.action;
 
-import java.sql.Time;
+import com.google.gson.Gson;
+import com.lntuplus.model.SignModel;
+import com.lntuplus.utils.DBSessionFactory;
+import com.lntuplus.utils.GsonUtils;
+import com.lntuplus.utils.TimeUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.google.gson.Gson;
-import com.lntuplus.model.SignModel;
-import com.lntuplus.utils.ComBean;
-import com.lntuplus.utils.DBSessionFactory;
-import com.lntuplus.utils.JDBCUtils;
-import com.lntuplus.utils.TimeUtils;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import sun.security.pkcs11.Secmod;
 
 public class SignAction {
 
@@ -30,38 +21,40 @@ public class SignAction {
     private double latitude_WGS84;
     private double longitude_WGS84;
 
-    public String sign(String number, String name, String iClass) {
-        Gson gson = new Gson();
-//        Gson
+    public Map sign(String number, String name, String iClass) {
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
         SqlSession sqlSession = sqlSessionFactory.openSession();
         int signCourseNo = courseNo(TimeUtils.getTime());
         Map<String, Object> map = new HashMap<>();
         if (signCourseNo == 0) {
             map.put("success", "timeError");
-            System.out.println(TimeUtils.getTime() + ":当前非上课时间！");
-            return gson.toJson(map);
+            System.out.println(TimeUtils.getTime() + " 当前非上课时间！");
+            return map;
         }
         SignModel signModel = new SignModel(Integer.valueOf(number), TimeUtils.getDate(), signCourseNo);
         int exist = sqlSession.selectOne("SignMapper.isExist", signModel);
         if (exist > 0) {
             map.put("success", "haveDone");
             System.out.println(number + " " + name + " " + iClass + " " + TimeUtils.getTime() + " 第" + signCourseNo + "节课已签到过！");
-            return gson.toJson(map);
+            sqlSession.close();
+            return map;
         }
         signModel.setDay(TimeUtils.getDate());
         signModel.setNo(signCourseNo);
         signModel.setSignTime(TimeUtils.getTime());
+        signModel.setName(name);
+        signModel.setiClass(iClass);
         sqlSession.insert("SignMapper.insert", signModel);
+        sqlSession.commit();
         System.out.println(number + " " + name + " " + iClass + " " + TimeUtils.getTime() + " 第" + signCourseNo + "节课签到成功！");
+        map.put("success", "success");
         map.put("sign", signModel);
-        return gson.toJson(map);
+        sqlSession.close();
+        return map;
     }
 
     private int courseNo(String date) {
-        Date now = new Date();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String dateTime = df.format(now);
+        String dateTime = TimeUtils.getDate();
         String[][] time = {
                 {dateTime + " 08:00:00", dateTime + " 09:35:00"},
                 {dateTime + " 09:55:00", dateTime + " 11:30:00"},

@@ -1,211 +1,61 @@
 package com.lntuplus.action;
 
-import com.lntuplus.utils.DayUtils;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.lntuplus.utils.*;
+import okhttp3.*;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-@Controller
-@RequestMapping({"/AutoLogin"})
-public class AutoLogin {
-    private String appid;
-    private String secret;
-    private String js_code;
-    private String grant_type;
-    private String serverUrl = "https://api.weixin.qq.com/sns/jscode2session";
-    private String openID;
-    private String number;
-    private String password;
-    private Map data = null;
-    private String[][] scoreData;
-    private String[][] tableData;
-    private String[][] examData;
-    private String[] infoData;
-    private String success;
-    private String gpa;
-    private int countExam;
-    private List scoreList;
-    private List tableList;
-    private List examList;
-    private Map<String, String> infoMap;
+public class LoginAction {
 
-    @ResponseBody
-    @RequestMapping({"/autoLogin"})
-    public Object autoLogin(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("application/json; charset=utf-8");
-        number = req.getParameter("number");
-        password = req.getParameter("password");
-        data = new HashMap();
-//		if (!getOpenID()) {
-//			data.put("success", "openid");
-//			return data;
-//		}
-//		if(number==null) {
-//			if(!selectNumber()) {
-//				data.put("success", "first");
-//				return data;
-//			}
-//		}
-        GetMessages gm = new GetMessages(number, password);
-        this.success = gm.getSuccess();
-        if (this.success.equals("true")) {
-            this.scoreData = gm.getScoreData();
-            this.examData = gm.getExamData();
-            this.tableData = gm.getTableData();
-            this.infoData = gm.getInfoData();
-            this.infoMap = gm.getInfoMap();
-            this.examList = gm.getExamList();
-            this.scoreList = gm.getScoreList();
-            this.tableList = gm.getTableList();
-            this.gpa = gm.getGpa();
-            this.countExam = gm.getCountExam();
-            data.put("success", success);
-            data.put("stuInfo", infoMap);
-            data.put("examList", examList);
-            data.put("scoreList", scoreList);
-            data.put("tableList", tableList);
-            data.put("gpa", gpa);
-            data.put("countExam", countExam);
-            data.put("nowWeek", nowWeek());
-            data.put("hashCode", data.hashCode());
-            data.put("forumShow", gm.getForumShow());
-//			new Thread(new Runnable() {
-//				public void run() {
-//					Map saveData = data;
-//					System.out.println("开始保存数据...");
-//					saveData(saveData);
-//					System.out.println("保存数据结束");
-//				}
-//			}).start();
+    private OkHttpUtils mOkHttpUtils;
+    private String mPort;
+    private String mSession;
+    private String mSessionUrl = "/common/security/check1.jsp";
+    private String mLoginUrl = "/j_acegi_security_check";
+    private String mCheckUrl = "/frameset.jsp";
 
-        } else {
-            data.put("success", success);
+    public Map<String, String> login(String number, String password) {
+        SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        Map<String, String> map = new HashMap<>();
+        mOkHttpUtils = OkHttpUtils.getInstance();
+        mPort = sqlSession.selectOne("PortMapper.select");
+        if (mPort.equals(Constants.STRING_FAILED) || mPort.equals(Constants.STRING_ERROR)) {
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_PORT);
+            return map;
         }
-        return data;
+        jointUrl();
+        mSession = mOkHttpUtils.getSession(mSessionUrl);
+        if (mSession.equals(Constants.STRING_FAILED) || mSession.equals(Constants.STRING_ERROR)) {
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_SESSION);
+            return map;
+        }
+        String post = post(number, password, mSession);
+        if (post.equals(Constants.STRING_FAILED)) {
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_POST);
+            return map;
+        }
+        if (!postCheck(post)) {
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_PASSWORD);
+            return map;
+        }
+        map.put(Constants.STRING_SUCCESS, Constants.STRING_SUCCESS);
+        map.put(Constants.STRING_SESSION, mSession);
+        map.put(Constants.STRING_PORT, mPort);
+        return map;
     }
 
-//	private boolean getOpenID() {
-//		OkHttpClient client = new OkHttpClient();
-//		String jsessionid = null;
-//		Request request = new Request.Builder().url(this.serverUrl + "?appid=" + this.appid + "&secret=" + this.secret
-//				+ "&js_code=" + this.js_code + "&grant_type=" + this.grant_type).build();
-//
-//		Call call = client.newCall(request);
-//		try {
-//			Response resp = call.execute();
-//			if (resp.isSuccessful()) {
-//				Response data = resp;
-//				String ss = data.body().string();
-//				ss = ss.substring(ss.indexOf("openid") + 9, ss.length() - 2);
-//				this.openID = ss;
-//				System.out.println(this.openID);
-//				return true;
-//			}
-//			resp.close();
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-//		return false;
-//	}
-//
-//	private boolean selectNumber() {
-//		ComBean cBean = new ComBean();
-//		Date now = new Date();
-//		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//		String dateTime = df.format(now);
-//
-//		List<List> list = new ArrayList();
-//		list = cBean.getCom("select number,password from user where openid='" + this.openID + "';", 2);
-//		if (list.size() > 0) {
-//			this.number = ((List) list.get(0)).get(0).toString();
-//			this.password = ((List) list.get(0)).get(1).toString();
-//			System.out.println(this.number + " " + this.password);
-//			return true;
-//		}
-//		return false;
-//	}
 
-    private String nowWeek() {
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat dfYear = new SimpleDateFormat("yyyy");
-        SimpleDateFormat dfWeek = new SimpleDateFormat("EEEE");
-//		Date now = null;
-//		try {
-//			now = df.parse("2018-10-01");
-//		} catch (ParseException e2) {
-//			// TODO Auto-generated catch block
-//			e2.printStackTrace();
-//		}
-        Date now = new Date();
-        String date = df.format(now);
-        String year = date.substring(0, 4);
-        String month = date.substring(5, 7);
-        String day = date.substring(8, 10);
-
-        Date date1 = null;
-        Date date2 = null;
-
-        String upFirstMon = DayUtils.firstMonday(Integer.valueOf(year).intValue(), 3);
-        try {
-            date1 = df.parse(upFirstMon);
-        } catch (ParseException e1) {
-            e1.printStackTrace();
-        }
-        String downFirstMon = DayUtils.firstMonday(Integer.valueOf(year).intValue(), 9);
-        try {
-            date2 = df.parse(downFirstMon);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        long nd = 86400000L;
-        long nh = 3600000L;
-        long nm = 60000L;
-        long diff;
-        if ((date1.before(now)) && (now.before(date2))) {
-            diff = now.getTime() - date1.getTime();
-        } else {
-            DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            Date newYearUpFirstMon = null;
-            try {
-                newYearUpFirstMon = format.parse(upFirstMon);
-            } catch (ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            if (now.before(newYearUpFirstMon)) {
-                int beforeYear = Integer.valueOf(year) - 1;
-                Date beforeYearNineDate = null;
-                try {
-                    beforeYearNineDate = format.parse(DayUtils.firstMonday(beforeYear, 9));
-                } catch (ParseException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                diff = now.getTime() - beforeYearNineDate.getTime();
-            } else {
-                diff = now.getTime() - date2.getTime();
-            }
-        }
-        long howDay = diff / nd;
-        long howWeek = howDay / 7L;
-
-        long hour = diff % nd / nh;
-
-        long min = diff % nd % nh / nm;
-
-        return howWeek + "";
-    }
 
 //	private void saveData(Map data) {
 //		ComBean cBean = new ComBean();
@@ -393,4 +243,38 @@ public class AutoLogin {
 ////			}
 ////		}
 //	}
+
+    private void jointUrl() {
+        mSessionUrl = mPort + "/common/security/check1.jsp";
+        mLoginUrl = mPort + "/j_acegi_security_check";
+        mCheckUrl = mPort + "/frameset.jsp";
+    }
+
+    private String post(String number, String password, String session) {
+        RequestBody formBody = new FormBody.Builder().add("j_username", number).add("j_password", password).build();
+        Call call = mOkHttpUtils.getInfoCallRequestBody(mLoginUrl, session, formBody);
+        Response resp = null;
+        try {
+            resp = call.execute();
+            if (resp.isSuccessful()) {
+                String data = resp.body().string();
+                resp.close();
+                return data;
+            }
+        } catch (IOException e) {
+            resp.close();
+            e.printStackTrace();
+            System.out.println(TimeUtils.getTime() + " Post登录失败！");
+        }
+        return Constants.STRING_FAILED;
+    }
+
+    private boolean postCheck(String Html) {
+        Document document = Jsoup.parse(Html);
+        String title = (document.getElementsByTag("title").get(0)).text();
+        if (title.equals("用户登录")) {
+            return false;
+        }
+        return true;
+    }
 }

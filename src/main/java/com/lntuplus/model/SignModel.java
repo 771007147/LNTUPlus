@@ -1,7 +1,5 @@
 package com.lntuplus.model;
 
-import java.util.Date;
-
 public class SignModel {
     private int number;
     private String name;
@@ -12,6 +10,8 @@ public class SignModel {
 
     public SignModel() {
     }
+
+    ;
 
     public SignModel(int number, String day, int no) {
         this.number = number;

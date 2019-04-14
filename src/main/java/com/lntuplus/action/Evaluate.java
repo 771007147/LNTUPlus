@@ -1,16 +1,10 @@
 package com.lntuplus.action;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
+import com.lntuplus.utils.Constants;
+import com.lntuplus.utils.OkHttpUtils;
+import com.lntuplus.utils.TimeUtils;
 import okhttp3.Call;
 import okhttp3.FormBody.Builder;
-import okhttp3.Headers;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import org.jsoup.Jsoup;
@@ -18,307 +12,139 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Evaluate {
-    private String session;
-    private String number;
-    private String password;
-    private String ip = "http://202.199.224.24:11182/newacademic";
-    private String sessionUrl = "/common/security/check1.jsp";
+    private String mSession;
     private String evaluateUrl = "/eva/index/resultlist.jsdo?groupId=&moduleId=506";
     private String evaluateGetUrl = "/eva/index";
     private String evaluatePostUrl = "/eva/index/putresult.jsdo";
-    private String loginUrl = "/j_acegi_security_check";
-    private String checkUrl = "/frameset.jsp";
-    private OkHttpClient client = new OkHttpClient();
-    private OkHttpClient.Builder builder = this.client.newBuilder();
-    private String[][] scoreData;
-    private String[][] tableData;
-    private String[][] examData;
-    private String[] evaluateData;
-    private String[] formData1 = new String[8];
-    private String[] formName1 = new String[8];
-    private String[][] formData2 = new String[12][5];
-    private String[][] formName2 = new String[12][5];
-    private String success = "false";
+    private Call mCall;
+    private Response mResponse;
 
-    public Evaluate(String number, String password, String session, String ip) throws IOException {
-        this.ip = ip;
-        this.number = number;
-        this.password = password;
-        this.session = session;
-        addIP();
-        String temp2 = getInfo(this.evaluateUrl);
-        if (success.equals("newStuNoInfo")) {
-            return;
+    public String evaluate(String port, String session) {
+        mSession = session;
+        jointUrl(port);
+        Map<String, Object> resp = getInfo(evaluateUrl);
+        if (resp.get(Constants.STRING_SUCCESS).equals(Constants.STRING_NEW_STU)) {
+            return Constants.STRING_NEW_STU;
         }
-        getList(temp2);
-    }
-
-    private void addIP() {
-        // TODO Auto-generated method stub
-        sessionUrl = ip + sessionUrl;
-        evaluateUrl = ip + evaluateUrl;
-        evaluateGetUrl = ip + evaluateGetUrl;
-        evaluatePostUrl = ip + evaluatePostUrl;
-        checkUrl = ip + checkUrl;
-    }
-
-    public String getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(String success) {
-        this.success = success;
+        String state = doEvaluate((String) resp.get(Constants.STRING_DATA));
+        return state;
     }
 
 
-    public void getList(String Html) throws IOException {
-        String state = "false";
+    private void jointUrl(String port) {
+        evaluateUrl = port + evaluateUrl;
+        evaluateGetUrl = port + evaluateGetUrl;
+        evaluatePostUrl = port + evaluatePostUrl;
+    }
+
+    private Map<String, Object> getInfo(String url) {
+        Map<String, Object> map = new HashMap<>();
+        mCall = OkHttpUtils.getInstance().getInfoCall(url, mSession);
+        try {
+            Response resp = mCall.execute();
+            if (resp.isSuccessful()) {
+                String data = resp.body().string();
+                map.put(Constants.STRING_SUCCESS, Constants.STRING_SUCCESS);
+                map.put(Constants.STRING_DATA, data);
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_NEW_STU);
+        }
+        map.put(Constants.STRING_SUCCESS, Constants.STRING_FAILED);
+        return map;
+    }
+
+    private String doEvaluate(String Html) {
+        Map<String, Object> map = new HashMap<>();
         Document document = Jsoup.parse(Html);
-
         Elements trs = document.getElementsByClass("infolist");
-
-        this.evaluateData = new String[trs.size()];
+        int count = 0;
         for (int i = 0; i < trs.size(); i++) {
-            final String temp = ((Element) trs.get(i)).attr("href").substring(1,
-                    ((Element) trs.get(i)).attr("href").length());
-            System.out.println(temp);
-            state = Evaluate.this.post(temp);
-
-            if (state.equals("success")) {
-                success = "success";
-                System.out.println("评课成功回调！");
-            } else {
-                success = "evaluateError";
-                return;
+            String url = (trs.get(i)).attr("href").substring(1);
+            url = evaluateGetUrl + url;
+            String state = post(url);
+            switch (state) {
+                case Constants.STRING_SUCCESS:
+                    System.out.println(TimeUtils.getTime() + " 评课成功！");
+                    break;
+                case Constants.STRING_FAILED:
+                    System.out.println(TimeUtils.getTime() + " 评课post失败！");
+                    count++;
+                    break;
+                case Constants.STRING_ERROR:
+                    System.out.println(TimeUtils.getTime() + " 评课出现错误！");
+                    count++;
+                    break;
+                default:
+                    break;
             }
         }
+        if (count > 0) {
+            return Constants.STRING_FAILED;
+        }
+        return Constants.STRING_SUCCESS;
     }
 
-    public String post(String url) throws IOException {
-        String data = "false";
-        final OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url(this.evaluateGetUrl + url).addHeader("cookie", this.session)
-                .build();
-        System.out.println(this.evaluateGetUrl + url);
-        Call call = client.newCall(request);
-        data = null;
-        Response resp = call.execute();
-        if (resp.isSuccessful()) {
-            data = resp.body().string();
-            Document document = Jsoup.parse(data);
-            Elements inputs = document.getElementsByTag("input");
-            Element table = document.getElementsByTag("table").get(3);
-            Elements trs = table.getElementsByTag("tr");
-            System.out.println(trs.size());
-            for (int i = 0; i < 8; i++) {
-                Evaluate.this.formData1[i] = (inputs.get(i)).val();
-                Evaluate.this.formName1[i] = (inputs.get(i)).attr("name");
-                System.out.println(Evaluate.this.formName1[i] + " " + Evaluate.this.formData1[i]);
-            }
-            int x = 0;
-            int y = 0;
-            for (int i = 1; i < 13; i++) {
-                for (int j = 0; j < 5; j++) {
-                    System.out.println((((trs.get(i)).getElementsByTag("td").get(2)).getElementsByTag("input").get(j))
-                            .attr("name") + " "
-                            + ((((Element) trs.get(i)).getElementsByTag("td").get(2)).getElementsByTag("input").get(j))
-                            .val());
-                    Evaluate.this.formName2[(i
-                            - 1)][j] = ((Element) ((Element) ((Element) trs.get(i)).getElementsByTag("td").get(2))
-                            .getElementsByTag("input").get(j)).attr("name");
-                    Evaluate.this.formData2[(i
-                            - 1)][j] = ((Element) ((Element) ((Element) trs.get(i)).getElementsByTag("td").get(2))
-                            .getElementsByTag("input").get(j)).val();
+    public String post(String url) {
+        mCall = OkHttpUtils.getInstance().getInfoCall(url, mSession);
+        try {
+            mResponse = mCall.execute();
+            if (mResponse.isSuccessful()) {
+                String data = mResponse.body().string();
+                mResponse.close();
+                Document document = Jsoup.parse(data);
+                Elements inputs = document.getElementsByTag("input");
+                Element table = document.getElementsByTag("table").get(3);
+                Elements trs = table.getElementsByTag("tr");
+                List<Map<String, String>> pageData = new ArrayList<>();
+                for (int i = 0; i < 8; i++) {
+                    Map<String, String> pageMap = new HashMap<>();
+                    pageMap.put(Constants.STRING_DATA, inputs.get(i).val());
+                    pageMap.put(Constants.STRING_NAME, inputs.get(i).attr("name"));
+                }
+                List<List<Map<String, String>>> infoData = new ArrayList<>();
+                for (int i = 1; i < 13; i++) {
+                    List<Map<String, String>> infoItem = new ArrayList<>();
+                    for (int j = 0; j < 5; j++) {
+                        Map<String, String> map = new HashMap<>();
+                        map.put(Constants.STRING_DATA, trs.get(i).getElementsByTag("td").get(2)
+                                .getElementsByTag("input").get(j).val());
+                        map.put(Constants.STRING_NAME, trs.get(i).getElementsByTag("td").get(2)
+                                .getElementsByTag("input").get(j).attr("name"));
+                        infoItem.add(map);
+                    }
+                    infoData.add(infoItem);
+                }
+                Builder formBody = new Builder();
+                for (int i = 0; i < 8; i++) {
+                    formBody.add(pageData.get(i).get(Constants.STRING_NAME), pageData.get(i).get(Constants.STRING_DATA));
+                }
+                for (int i = 0; i < 12; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        formBody.add(infoData.get(i).get(j).get(Constants.STRING_NAME), infoData.get(i).get(j).get(Constants.STRING_DATA));
+                    }
+                }
+                RequestBody requestBody = formBody.build();
+                mCall = OkHttpUtils.getInstance().getInfoCallRequestBody(evaluatePostUrl, mSession, requestBody);
+                mResponse = mCall.execute();
+                if (mResponse.isSuccessful()) {
+                    return Constants.STRING_SUCCESS;
+                } else {
+                    return Constants.STRING_FAILED;
                 }
             }
-            Builder formBody = new Builder();
-            for (int i = 0; i < 8; i++) {
-                formBody.add(Evaluate.this.formName1[i], Evaluate.this.formData1[i]);
-            }
-            for (int i = 0; i < 12; i++) {
-                for (int j = 0; j < 5; j++) {
-                    formBody.add(Evaluate.this.formName2[i][j], Evaluate.this.formData2[i][j]);
-                }
-            }
-            RequestBody requestBody = formBody.build();
-            request = new Request.Builder().url(Evaluate.this.evaluatePostUrl)
-                    .addHeader("cookie", Evaluate.this.session).post(requestBody).build();
-            call = client.newCall(request);
-            data = null;
-            resp = call.execute();
-            if (resp.isSuccessful()) {
-                data = "success";
-                System.out.println("评课成功!");
-            }
-            resp.close();
-            return data;
+        } catch (IOException e) {
+            return Constants.STRING_ERROR;
         }
-        return data;
+        return Constants.STRING_ERROR;
     }
 
-    public String getSession() {
-        return this.session;
-    }
-
-    public void setSession(String session) {
-        this.session = session;
-    }
-
-    public String getNumber() {
-        return this.number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String[][] getScoreData() {
-        return this.scoreData;
-    }
-
-    public void setScoreData(String[][] scoreData) {
-        this.scoreData = scoreData;
-    }
-
-    public String[][] getTableData() {
-        return this.tableData;
-    }
-
-    public void setTableData(String[][] tableData) {
-        this.tableData = tableData;
-    }
-
-    public String[][] getExamData() {
-        return this.examData;
-    }
-
-    public void setExamData(String[][] examData) {
-        this.examData = examData;
-    }
-
-    private String getInfo(String url) {
-        OkHttpClient client = new OkHttpClient().newBuilder().connectTimeout(3, TimeUnit.SECONDS)// 设置连接超时时间
-                .readTimeout(3, TimeUnit.SECONDS)// 设置读取超时时间
-                .build();
-        Request request = new Request.Builder().url(url).addHeader("cookie", this.session).build();
-        System.out.println(url);
-        Call call = client.newCall(request);
-        String data = null;
-        try {
-            Response resp = call.execute();
-            if (resp.isSuccessful()) {
-                data = resp.body().string();
-            }
-            resp.close();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-            success = "newStuNoInfo";
-            return data;
-        }
-        return data;
-    }
-
-    public String loginPost() throws IOException {
-        OkHttpClient client = new OkHttpClient();
-        RequestBody formBody = new Builder().add("j_username", this.number).add("j_password", this.password)
-                .build();
-
-        Request request = new Request.Builder().url(this.loginUrl).addHeader("cookie", this.session).post(formBody)
-                .build();
-
-        final Call call = client.newCall(request);
-        String state = null;
-        String data = null;
-        Response resp = call.execute();
-        if (resp.isSuccessful()) {
-            data = resp.body().string();
-        }
-        resp.close();
-        return data;
-
-    }
-
-    public String getSessionId() {
-        OkHttpClient client = new OkHttpClient();
-        String jsessionid = null;
-        Request request = new Request.Builder().url(this.sessionUrl).build();
-
-        Call call = client.newCall(request);
-        try {
-            Response resp = call.execute();
-            if (resp.isSuccessful()) {
-                Response data = resp;
-                Headers headers = data.headers();
-                List<String> cookies = headers.values("Set-Cookie");
-                String session = (String) cookies.get(0);
-                jsessionid = session.substring(0, session.indexOf(";"));
-            }
-            resp.close();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        return jsessionid;
-    }
-
-    public class info {
-        String number;
-        String password;
-        String jsessionid;
-
-        public info() {
-        }
-
-        public String getNumber() {
-            return this.number;
-        }
-
-        public void setNumber(String number) {
-            this.number = number;
-        }
-
-        public String getPassword() {
-            return this.password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public String getJsessionid() {
-            return this.jsessionid;
-        }
-
-        public void setJsessionid(String jsessionid) {
-            this.jsessionid = jsessionid;
-        }
-    }
-
-    private String transWeek(String week) {
-        String[] Week = {"日", "一", "二", "三", "四", "五", "六"};
-        for (int i = 0; i < 7; i++) {
-            if (week.equals(Week[i])) {
-                return String.valueOf(i);
-            }
-        }
-        return "日";
-    }
-
-    private int getDays(String endDate, String startDate) throws Exception {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date1 = sdf.parse(startDate);
-        Date date2 = sdf.parse(endDate);
-        long days = (date2.getTime() - date1.getTime()) / 86400000L;
-        long yushu = (date2.getTime() - date1.getTime()) % 86400000L;
-
-        return (int) days;
-    }
 }

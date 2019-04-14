@@ -13,7 +13,10 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
+import com.lntuplus.model.ExamModel;
 import com.lntuplus.utils.ComBean;
+import com.lntuplus.utils.OkHttpUtils;
+import com.lntuplus.utils.TimeUtils;
 import okhttp3.Call;
 import okhttp3.FormBody.Builder;
 import okhttp3.Headers;
@@ -58,16 +61,19 @@ public class GetMessages {
     private String forumShow = "1";
     private List lineHeight = new ArrayList();
 
+    private OkHttpUtils mOkHttpUtils;
+
     public GetMessages(String number, String password) {
+        mOkHttpUtils = OkHttpUtils.getInstance();
         this.number = number;
         this.password = password;
-        ip = choosePort();
+        ip = mOkHttpUtils.getUseablePort();
         if (ip.equals("session")) {
             success = "session";
             return;
         }
-        addIP();
-        session = getSessionId();
+        jointUrl();
+        session = mOkHttpUtils.getSession(sessionUrl);
         if (success.equals("session")) {
             return;
         }
@@ -110,7 +116,7 @@ public class GetMessages {
         }
     }
 
-    private void addIP() {
+    private void jointUrl() {
         // TODO Auto-generated method stub
         sessionUrl = ip + "/common/security/check1.jsp";
         loginUrl = ip + "/j_acegi_security_check";
@@ -119,72 +125,6 @@ public class GetMessages {
         examUrl = ip + "/student/exam/index.jsdo?groupId=&moduleId=2030";
         stuInfoUrl = ip + "/student/studentinfo/studentinfo.jsdo?groupId=&moduleId=2060";
         checkUrl = ip + "/frameset.jsp";
-    }
-
-    private String choosePort() {
-        OkHttpClient client = new OkHttpClient().newBuilder().connectTimeout(2, TimeUnit.SECONDS)// 设置连接超时时间
-                .readTimeout(2, TimeUnit.SECONDS)// 设置读取超时时间
-                .build();
-        ;
-        String jsessionid = null;
-        Request request = new Request.Builder().url(ip1 + "/common/security/check1.jsp").build();
-        Call call = client.newCall(request);
-        try {
-            Response resp = call.execute();
-            if (resp.isSuccessful()) {
-                System.out.println("接口1测试可用！");
-                resp.close();
-                return ip1;
-            } else {
-                System.out.println("接口1获取Session失败，测试接口2...");
-                OkHttpClient client1 = new OkHttpClient().newBuilder().connectTimeout(2, TimeUnit.SECONDS)// 设置连接超时时间
-                        .readTimeout(2, TimeUnit.SECONDS)// 设置读取超时时间
-                        .build();
-                Request request1 = new Request.Builder().url(ip2 + "/common/security/check1.jsp").build();
-                Call call1 = client1.newCall(request1);
-                try {
-                    Response resp1 = call.execute();
-                    if (resp1.isSuccessful()) {
-                        System.out.println("接口2测试可用！");
-                        resp.close();
-                        resp1.close();
-                        return ip2;
-                    } else {
-                        resp.close();
-                        resp1.close();
-                        return "session";
-                    }
-                } catch (IOException e1) {
-                    resp.close();
-                    System.out.println("接口2获取Session失败，教务在线爆炸！");
-                    return "session";
-                }
-            }
-
-        } catch (IOException e1) {
-            System.out.println("接口1获取Session失败，测试接口2...");
-            OkHttpClient client1 = new OkHttpClient().newBuilder().connectTimeout(2, TimeUnit.SECONDS)// 设置连接超时时间
-                    .readTimeout(2, TimeUnit.SECONDS)// 设置读取超时时间
-                    .build();
-            ;
-            ;
-            Request request1 = new Request.Builder().url(ip2 + "/common/security/check1.jsp").build();
-            Call call1 = client1.newCall(request1);
-            try {
-                Response resp1 = call1.execute();
-                if (resp1.isSuccessful()) {
-                    System.out.println("接口2测试可用！");
-                    resp1.close();
-                    return ip2;
-                } else {
-                    resp1.close();
-                    return "session";
-                }
-            } catch (IOException e2) {
-                System.out.println("接口2获取Session失败，教务在线爆炸！");
-                return "session";
-            }
-        }
     }
 
     private String getAllTable(String html) {
@@ -212,94 +152,94 @@ public class GetMessages {
         return forumShow;
     }
 
-    public boolean getInfo(String number, String password) throws IOException {
-        this.number = number;
-        this.password = password;
-        session = getSessionId();
-        if (success.equals("session")) {
-            return false;
-        }
-        System.out.println(session);
-        String loginReturn = loginPost();
-        if (loginReturn == null) {
-            success = "connect";
-            System.out.println("connectError");
-            return false;
-        }
-        if (!passwordCheck(loginReturn).booleanValue()) {
-            success = "password";
-            System.out.println("passwordError");
-            return false;
-        }
-        String checkReturn = getInfo(checkUrl);
-        String examReturn = null;
-        String scoreReturn = null;
-        String infoReturn = null;
-        String tableReturn = null;
-        if (success.equals("true")) {
-            infoReturn = getInfo(stuInfoUrl);
-        }
-        if (success.equals("true")) {
-            examReturn = getInfo(examUrl);
-        }
-        if (success.equals("true")) {
-            scoreReturn = getInfo(scoreUrl);
-        }
-        if (success.equals("true")) {
-            tableReturn = getInfo(tableUrl);
-        }
-        if (success.equals("true")) {
-            parseStuInfo(infoReturn);
-            parseExam(examReturn);
-            parseScore(scoreReturn);
-            parseTable(tableReturn);
-        }
-        return true;
-    }
-
-    public void getStuInfo() {
-        this.number = number;
-        this.password = password;
-        session = getSessionId();
-        if (success.equals("connect")) {
-            return;
-        }
-        System.out.println(session);
-        String loginReturn = loginPost();
-        if (loginReturn == null) {
-            success = "connect";
-            System.out.println("connectError");
-            return;
-        }
-        if (!passwordCheck(loginReturn).booleanValue()) {
-            success = "password";
-            System.out.println("passwordError");
-            return;
-        }
-        String checkReturn = getInfo(checkUrl);
-        String examReturn = null;
-        String scoreReturn = null;
-        String infoReturn = null;
-        String tableReturn = null;
-        if (success.equals("true")) {
-            infoReturn = getInfo(stuInfoUrl);
-        }
-        if (success.equals("true")) {
-            examReturn = getInfo(examUrl);
-        }
-        if (success.equals("true")) {
-            scoreReturn = getInfo(scoreUrl);
-        }
-        if (success.equals("true")) {
-            tableReturn = getInfo(tableUrl);
-        }
-        if (success.equals("true")) {
-            parseStuInfo(infoReturn);
-            parseExam(examReturn);
-            parseScore(scoreReturn);
-            parseTable(tableReturn);
-        }
-    }
+//    public boolean getInfo(String number, String password) throws IOException {
+//        this.number = number;
+//        this.password = password;
+//        session = getSessionId();
+//        if (success.equals("session")) {
+//            return false;
+//        }
+//        System.out.println(session);
+//        String loginReturn = loginPost();
+//        if (loginReturn == null) {
+//            success = "connect";
+//            System.out.println("connectError");
+//            return false;
+//        }
+//        if (!passwordCheck(loginReturn).booleanValue()) {
+//            success = "password";
+//            System.out.println("passwordError");
+//            return false;
+//        }
+//        String checkReturn = getInfo(checkUrl);
+//        String examReturn = null;
+//        String scoreReturn = null;
+//        String infoReturn = null;
+//        String tableReturn = null;
+//        if (success.equals("true")) {
+//            infoReturn = getInfo(stuInfoUrl);
+//        }
+//        if (success.equals("true")) {
+//            examReturn = getInfo(examUrl);
+//        }
+//        if (success.equals("true")) {
+//            scoreReturn = getInfo(scoreUrl);
+//        }
+//        if (success.equals("true")) {
+//            tableReturn = getInfo(tableUrl);
+//        }
+//        if (success.equals("true")) {
+//            parseStuInfo(infoReturn);
+//            parseExam(examReturn);
+//            parseScore(scoreReturn);
+//            parseTable(tableReturn);
+//        }
+//        return true;
+//    }
+//
+//    public void getStuInfo() {
+//        this.number = number;
+//        this.password = password;
+//        session = getSessionId();
+//        if (success.equals("connect")) {
+//            return;
+//        }
+//        System.out.println(session);
+//        String loginReturn = loginPost();
+//        if (loginReturn == null) {
+//            success = "connect";
+//            System.out.println("connectError");
+//            return;
+//        }
+//        if (!passwordCheck(loginReturn).booleanValue()) {
+//            success = "password";
+//            System.out.println("passwordError");
+//            return;
+//        }
+//        String checkReturn = getInfo(checkUrl);
+//        String examReturn = null;
+//        String scoreReturn = null;
+//        String infoReturn = null;
+//        String tableReturn = null;
+//        if (success.equals("true")) {
+//            infoReturn = getInfo(stuInfoUrl);
+//        }
+//        if (success.equals("true")) {
+//            examReturn = getInfo(examUrl);
+//        }
+//        if (success.equals("true")) {
+//            scoreReturn = getInfo(scoreUrl);
+//        }
+//        if (success.equals("true")) {
+//            tableReturn = getInfo(tableUrl);
+//        }
+//        if (success.equals("true")) {
+//            parseStuInfo(infoReturn);
+//            parseExam(examReturn);
+//            parseScore(scoreReturn);
+//            parseTable(tableReturn);
+//        }
+//    }
 
     public int getCountExam() {
         return countExam;
@@ -436,18 +376,18 @@ public class GetMessages {
 //					System.out.println("该新生尚未填写必填信息:"+number);
 //					return data;
 //				}
-                Evaluate evaluate = new Evaluate(number, password, session, ip);
-
-                if (evaluate.getSuccess().equals("success")) {
-                    return getInfo(scoreUrl);
-                } else if (evaluate.getSuccess().equals("newStuNoInfo")) {
-                    this.success = "newStuNoInfo";
-                    System.out.println("该新生尚未填写必填信息:" + number);
-                    return data;
-                } else {
-                    System.out.println("评课失败，学号：" + number);
-                }
-                resp.close();
+//                Evaluate evaluate = new Evaluate(number, password, session, ip);
+//
+//                if (evaluate.getSuccess().equals("success")) {
+//                    return getInfo(scoreUrl);
+//                } else if (evaluate.getSuccess().equals("newStuNoInfo")) {
+//                    this.success = "newStuNoInfo";
+//                    System.out.println("该新生尚未填写必填信息:" + number);
+//                    return data;
+//                } else {
+//                    System.out.println("评课失败，学号：" + number);
+//                }
+//                resp.close();
             }
             if (resp.isSuccessful()) {
                 data = resp.body().string();
@@ -487,33 +427,6 @@ public class GetMessages {
         }
         resp.close();
         return data;
-
-    }
-
-    public String getSessionId() {
-        OkHttpClient client = new OkHttpClient();
-        String jsessionid = null;
-        Request request = new Request.Builder().url(sessionUrl).build();
-
-        Call call = client.newCall(request);
-        try {
-            Response resp = call.execute();
-            if (resp.isSuccessful()) {
-                Response data = resp;
-                Headers headers = data.headers();
-                List<String> cookies = headers.values("Set-Cookie");
-                String session = (String) cookies.get(0);
-                jsessionid = session.substring(0, session.indexOf(";"));
-            } else {
-                success = "session";
-                System.out.println("获取sessionid失败！");
-            }
-            resp.close();
-        } catch (IOException e1) {
-            success = "session";
-            System.out.println("连接超时，获取seeionid失败！");
-        }
-        return jsessionid;
     }
 
     public void parseStuInfo(String Html) {
@@ -859,22 +772,15 @@ public class GetMessages {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String nowDay = df.format(day);
         for (int i = 1; i < trs.size(); i++) {
+            ExamModel examModel = new ExamModel();
             Element e = trs.get(i);
-
             Elements tds = e.getElementsByTag("td");
-            examData[(i - 1)][0] = (tds.get(0)).text();
-            examData[(i - 1)][1] = (tds.get(1)).text().toString().substring(0,
-                    (tds.get(1)).text().toString().indexOf(" "));
-            examData[(i - 1)][2] = (tds.get(1)).text().toString()
-                    .substring((tds.get(1)).text().toString().indexOf(" ") + 1, (tds.get(1)).text().length());
-            examData[(i - 1)][3] = (tds.get(2)).text();
-            try {
-                examData[(i - 1)][4] = getDays(examData[(i - 1)][1], nowDay) + "";
-                examData[(i - 1)][5] = getWeek(examData[(i - 1)][1]);
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
+            examModel.setCourse(tds.get(0).text());
+            examModel.setDate(tds.get(1).text().substring(0, tds.get(1).text().indexOf(" ")));
+            examModel.setTime(tds.get(1).text().substring((tds.get(1)).text().indexOf(" ") + 1, (tds.get(1)).text().length() - 1));
+            examModel.setAddress(tds.get(2).text());
         }
+
         for (int j = 0; j < examData.length - 1; j++) {
             for (int k = 0; k < examData.length - 1 - j; k++) {
                 if (Integer.valueOf(examData[k][4]) == Integer.valueOf(examData[(k + 1)][4])) {

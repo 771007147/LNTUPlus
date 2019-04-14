@@ -5,8 +5,7 @@ import java.io.Serializable;
 public class HelloModel implements Serializable {
     private String updateTime;
     private String title;
-    private String imgUrl_16;
-    private String imgUrl_21;
+    private String imgUrl;
     private String url;
 
     public String getUpdateTime() {
@@ -25,20 +24,12 @@ public class HelloModel implements Serializable {
         this.title = title;
     }
 
-    public String getImgUrl_16() {
-        return imgUrl_16;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setImgUrl_16(String imgUrl_16) {
-        this.imgUrl_16 = imgUrl_16;
-    }
-
-    public String getImgUrl_21() {
-        return imgUrl_21;
-    }
-
-    public void setImgUrl_21(String imgUrl_21) {
-        this.imgUrl_21 = imgUrl_21;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getUrl() {

@@ -1,0 +1,1451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="lntuplus" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="759dc6db-6f36-4e5f-9c8f-581358465c47" name="Default Changelist" comment="feat: commit all files.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian.">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/lntuplus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_java6_2_3_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreRankAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/CETController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ChooseTableController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/FeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreRankController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TimeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/WeekController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/dao/PortDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ActivityModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ExamModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/GPAModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ScoreModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/StuInfoModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/TableModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/article-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/everyday-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/notice-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/port-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/sign.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LNTUPlus_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LNTUPlus_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LNTUPlus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LNTUPlus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ArticleAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ArticleAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AutoLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Evaluate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Evaluate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/EverydayTextAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/EverydayAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/HelloAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/HelloAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SchoolNoticeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayTextController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SchoolNoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ArticleModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ArticleModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/EverydayTextModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/EverydayModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/HelloModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/HelloModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SchoolNoticeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/NoticeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/SchoolNoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/GsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/GsonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/404.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/success.jsp" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="711">
+              <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="708">
+              <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/ExamModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="e#599#600#0" expanded="true" />
+                <element signature="e#626#627#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#698#699#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="568">
+              <caret line="109" column="45" lean-forward="true" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/DBSessionFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="105" column="57" selection-start-line="105" selection-start-column="57" selection-end-line="105" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/GPAModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding>
+                <element signature="e#182#183#0" expanded="true" />
+                <element signature="e#211#212#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#291#292#0" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+                <element signature="e#347#348#0" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#509#510#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="FxmlFile" />
+        <option value="Tag Library Descriptor" />
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>(List)</find>
+      <find>weeks</find>
+      <find>buildingname</find>
+      <find>new TimeUtils().getTime()</find>
+      <find>.git</find>
+      <find>schoolNoticeModel</find>
+      <find>update</find>
+      <find>resp.close</find>
+      <find>number</find>
+      <find>tt</find>
+      <find>parsetable</find>
+      <find>, item.length()</find>
+      <find>(Element)</find>
+      <find>Evaluate.this.</find>
+      <find>evaluateData</find>
+      <find>requestbody</find>
+      <find>getuseableport</find>
+      <find>System.out.pr</find>
+      <find>nowweek</find>
+      <find>quartz</find>
+      <find>response</find>
+      <find>filePath</find>
+      <find>DEFAULT_SIZE</find>
+      <find>getwidth</find>
+      <find>size</find>
+      <find>getbufferedimage</find>
+      <find>system.out.pr</find>
+      <find>system.out</find>
+      <find>Thread.</find>
+      <find>gpa</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>mItemUrl</replace>
+      <replace>mClient</replace>
+      <replace>noticeMain</replace>
+      <replace>new TimeUtils().getTime()</replace>
+      <replace>sBuildingName</replace>
+      <replace>TimeUtils.getTime()</replace>
+      <replace>noticeModel</replace>
+      <replace>updateHashcode</replace>
+      <replace>itme</replace>
+      <replace>s</replace>
+      <replace>mNumber</replace>
+      <replace>map</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="GaoRuiLian &lt;771007147@qq.com&gt;" />
+        <option value="GaoRuiLian" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/WeekNoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TimeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/HelloModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/WeekController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/article-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ActivityModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ArticleAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ArticleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Feedback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/FeedbackController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeTestController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/HelloAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/sign.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/notice-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ScoreModel.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/StuInfoModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/SaveService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ExamModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreRankController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/GAPModel.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="LNTUPlus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="LNTUPlus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="LNTUPlus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="2463" />
+    <option name="height" value="1336" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553935499698" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.26091954" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus/utils" />
+      <recent name="$PROJECT_DIR$/web/views" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat9">
+    <configuration name="Tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/lntuplus/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="START_JAVASCRIPT_DEBUGGER" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="LNTUPlus:exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/lntuplus" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_LNTUPlus_3" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54685" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="LNTUPlus:exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="index.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/index.jsp" />
+      <deployment>
+        <artifact name="LNTUPlus:exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="index_jsp_LNTUPlus" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64046" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="LNTUPlus:exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat9" />
+      <item itemvalue="Tomcat Server.index.jsp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Tomcat Server.index.jsp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="759dc6db-6f36-4e5f-9c8f-581358465c47" name="Default Changelist" comment="" />
+      <created>1549033079706</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549033079706</updated>
+      <workItem from="1549033081841" duration="5292000" />
+      <workItem from="1549168190947" duration="48000" />
+      <workItem from="1549181795775" duration="2960000" />
+      <workItem from="1549249991025" duration="16398000" />
+      <workItem from="1549459870289" duration="5035000" />
+      <workItem from="1549532239815" duration="5216000" />
+      <workItem from="1549592734779" duration="2315000" />
+      <workItem from="1549891551907" duration="3036000" />
+      <workItem from="1549973661357" duration="11761000" />
+      <workItem from="1550062308921" duration="10461000" />
+      <workItem from="1550148921179" duration="4196000" />
+      <workItem from="1550154050378" duration="83000" />
+      <workItem from="1550296570598" duration="14283000" />
+      <workItem from="1550492118586" duration="3959000" />
+      <workItem from="1550672741506" duration="17267000" />
+      <workItem from="1550897607521" duration="31473000" />
+      <workItem from="1551096605827" duration="16563000" />
+      <workItem from="1551655136807" duration="9020000" />
+      <workItem from="1551704498882" duration="8349000" />
+      <workItem from="1551926542827" duration="23343000" />
+      <workItem from="1552116665833" duration="13082000" />
+      <workItem from="1552286789985" duration="8496000" />
+      <workItem from="1552393045050" duration="7895000" />
+      <workItem from="1552726175756" duration="29000" />
+      <workItem from="1552726239575" duration="4040000" />
+      <workItem from="1552912768774" duration="1496000" />
+      <workItem from="1552925648247" duration="2799000" />
+      <workItem from="1553083445051" duration="4324000" />
+      <workItem from="1553131850950" duration="457000" />
+      <workItem from="1553146618770" duration="3628000" />
+      <workItem from="1553321710072" duration="4683000" />
+      <workItem from="1553403757344" duration="1787000" />
+      <workItem from="1553655693419" duration="1202000" />
+      <workItem from="1553738710307" duration="28000" />
+      <workItem from="1553738772322" duration="1356000" />
+      <workItem from="1553751111562" duration="4240000" />
+      <workItem from="1553759769266" duration="5432000" />
+      <workItem from="1553823291374" duration="10517000" />
+      <workItem from="1553935564685" duration="3133000" />
+      <workItem from="1554016103980" duration="135000" />
+      <workItem from="1554016637264" duration="7829000" />
+      <workItem from="1554083818169" duration="21790000" />
+      <workItem from="1554253796704" duration="14334000" />
+      <workItem from="1554697133716" duration="4541000" />
+      <workItem from="1554719174877" duration="5349000" />
+      <workItem from="1554783309488" duration="6454000" />
+      <workItem from="1554810804702" duration="4237000" />
+      <workItem from="1554861523899" duration="1940000" />
+      <workItem from="1555224791994" duration="3790000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: first commit.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian.">
+      <created>1550675009105</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550675009105</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: commit all files.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian.">
+      <created>1550677123407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550677123408</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="340081000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2463" height="1336" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974925" visible="true" weight="0.12102437" />
+      <window_info id="Structure" order="1" sideWeight="0.50328225" side_tool="true" weight="0.27682403" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.5025075" side_tool="true" weight="0.1604448" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49284694" visible="true" weight="0.3175241" />
+      <window_info anchor="bottom" x="0" y="560" width="2560" height="302" id="Debug" order="3" sideWeight="0.49563146" weight="0.4493569" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32943013" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32839838" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32974428" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5071531" side_tool="true" weight="0.32080537" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49722" weight="0.32062256" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Duplicate detector" order="16" weight="0.32885906" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32962668" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32934132" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Maven" order="9" weight="0.3298611" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: first commit.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian." />
+    <MESSAGE value="feat: commit all files.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: commit all files.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
+          <line>149</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
+          <line>150</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
+          <line>151</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
+          <line>152</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
+          <line>154</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
+          <line>153</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/port-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/HelloAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/article-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="32" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="105" column="62" lean-forward="true" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="31" column="86" lean-forward="true" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="63" column="64" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/notice-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/hello-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/everyday-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/HelloModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/ScoreModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1901#1902#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#2511#2512#0" expanded="true" />
+            <element signature="e#2542#2543#0" expanded="true" />
+            <element signature="e#3145#3146#0" expanded="true" />
+            <element signature="e#3176#3177#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
+            <element signature="e#3330#3331#0" expanded="true" />
+            <element signature="e#3450#3451#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3526#3527#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3772#3773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.0/mybatis-3.5.0.jar!/org/apache/ibatis/session/SqlSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/StuInfoModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/NoticeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12528">
+          <caret line="747" column="16" selection-start-line="747" selection-start-column="16" selection-end-line="747" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1494">
+          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/src.zip!/java/util/concurrent/Future.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="142" column="6" lean-forward="true" selection-start-line="142" selection-start-column="6" selection-end-line="142" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="43" column="19" selection-start-line="43" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5616">
+          <caret line="325" column="26" selection-start-line="325" selection-start-column="26" selection-end-line="325" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/SaveService.java" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="112" column="26" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreRankAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreRankController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="129" column="72" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/DBSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/ExamModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/GPAModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="105" column="57" selection-start-line="105" selection-start-column="57" selection-end-line="105" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="109" column="45" lean-forward="true" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>lntuplus</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.26091954" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web (LNTUPlus)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.26091954" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4183908" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4183908" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>LNTUPlus</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.26091954" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Spring-4.3.18.RELEASE</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.26091954" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

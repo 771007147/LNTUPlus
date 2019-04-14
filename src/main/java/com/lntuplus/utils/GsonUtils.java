@@ -1,6 +1,7 @@
 package com.lntuplus.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class GsonUtils {
 
@@ -9,12 +10,12 @@ public class GsonUtils {
     private static Gson sGson = null;
 
     private GsonUtils() {
-        sGson = new Gson();
+        sGson = new GsonBuilder().disableHtmlEscaping().create();
     }
 
     public static Gson getInstance() {
         if (sGsonUtils == null) {
-            synchronized (DBSessionFactory.class) {
+            synchronized (Gson.class) {
                 if (sGsonUtils == null) {
                     sGsonUtils = new GsonUtils();
                 }

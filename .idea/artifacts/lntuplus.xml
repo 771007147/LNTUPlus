@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="lntuplus">
+    <output-path>$PROJECT_DIR$/out/artifacts/lntuplus</output-path>
+    <root id="archive" name="lntuplus.war">
+      <element id="artifact" artifact-name="LNTUPlus:exploded" />
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.github.xuwei-k:html2image:0.1.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

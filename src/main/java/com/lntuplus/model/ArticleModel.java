@@ -1,25 +1,67 @@
 package com.lntuplus.model;
 
-import java.util.List;
-import java.util.Map;
-
 public class ArticleModel {
-    private String success;
-    private List<Map<String, Object>> data;
+    private String updateTime;
+    private String title;
+    private String imgUrl;
+    private String text;
+    private String time;
+    private String address;
+    private String url;
 
-    public String getSuccess() {
-        return success;
+    public String getUpdateTime() {
+        return updateTime;
     }
 
-    public void setSuccess(String success) {
-        this.success = success;
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public List<Map<String, Object>> getData() {
-        return data;
+    public String getTitle() {
+        return title;
     }
 
-    public void setData(List<Map<String, Object>> data) {
-        this.data = data;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

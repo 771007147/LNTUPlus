@@ -3,15 +3,32 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!-- 根标签 -->
+
+
 <configuration>
+
     <!--&amp;替换&特殊符号-->
     <properties>
-        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://localhost:3306/gongdaplus?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"/>
+                  value="jdbc:mysql://localhost:3306/lntuplus?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"/>
         <property name="username" value="root"/>
         <property name="password" value="771007147"/>
     </properties>
+
+    <settings>
+        <!-- setting name="autoMappingBehavior" value="PARTIAL" / -->
+        <setting name="cacheEnabled" value="false"/>
+        <!-- setting name="lazyLoadingEnabled" value="false" / -->
+        <!-- setting name="aggressiveLazyLoading" value="true" / -->
+        <setting name="multipleResultSetsEnabled" value="false"/>
+        <!-- setting name="useColumnLabel" value="true" / -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- setting name="defaultStatementTimeout" value="" / -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- setting name="safeRowBoundsEnabled" value="true" / -->
+    </settings>
 
     <!-- 环境，可以配置多个，default：指定采用哪个环境 -->
     <environments default="development">
@@ -21,10 +38,10 @@
             <transactionManager type="JDBC"/>
             <!-- 数据源，池类型的数据源 -->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis-110"/>
                 <property name="username" value="root"/>
-                <property name="password" value="123456"/>
+                <property name="password" value="771007147"/>
             </dataSource>
         </environment>
         <environment id="development">
@@ -43,5 +60,13 @@
     <mappers>
         <mapper resource="mappers/hello-mapper.xml"/>
         <mapper resource="mappers/sign-mapper.xml"/>
+        <mapper resource="mappers/notice-mapper.xml"/>
+        <mapper resource="mappers/article-mapper.xml"/>
+        <mapper resource="mappers/everyday-mapper.xml"/>
+        <mapper resource="mappers/port-mapper.xml"/>
+        <mapper resource="mappers/save-mapper.xml"/>
+
     </mappers>
+
 </configuration>
+

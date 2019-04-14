@@ -1,6 +1,7 @@
 package com.lntuplus.action;
 
 import com.lntuplus.model.ClassRoomModel;
+import com.lntuplus.utils.TimeUtils;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -30,7 +31,7 @@ public class ClassRoomAction {
         String id = nameToID(name, campus);
         if (id.equals("-1")) {
             classRoomModel.setSuccess("nameError");
-            System.out.println("校区名错误！");
+            System.out.println(TimeUtils.getTime() + " 校区名错误！");
             return classRoomModel;
         }
         String newUrl = url + "?weeks=" + weeks + "&buildingid1=" + id + "&sBuildingName=" + sBuildingName;
@@ -41,18 +42,18 @@ public class ClassRoomAction {
             Response roomResp = call.execute();
             if (roomResp.isSuccessful()) {
                 Response data = roomResp;
-                classRoomModel.setSuccess("true");
+                classRoomModel.setSuccess("success");
                 classRoomModel.setData(parseClassRoom(data.body().string()));
-                System.out.println("查询空教室成功!name:" + name + ",weeks:" + weeks);
+                System.out.println(TimeUtils.getTime() + " 查询空教室成功!name:" + name + ",weeks:" + weeks);
                 roomResp.close();
             } else {
                 classRoomModel.setSuccess("failed");
-                System.out.println("获取空教室失败！");
+                System.out.println(TimeUtils.getTime() + ":获取空教室失败！");
             }
             roomResp.close();
         } catch (IOException e1) {
-            classRoomModel.setSuccess("connect");
-            System.out.println("连接超时，获取空教室失败！");
+            classRoomModel.setSuccess("error");
+            System.out.println(TimeUtils.getTime() + " 连接超时，获取空教室失败！");
         }
         return classRoomModel;
     }

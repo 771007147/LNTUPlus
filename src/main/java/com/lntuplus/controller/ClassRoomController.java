@@ -16,14 +16,13 @@ public class ClassRoomController {
 
     @ResponseBody
     @RequestMapping({"/get"})
-    public String get(HttpServletRequest req, HttpServletResponse resp) {
+    public Object get(HttpServletRequest req, HttpServletResponse resp) {
         resp.setContentType("application/json; charset=utf-8");
         String weeks = req.getParameter("weeks");
         String name = req.getParameter("buildingname");
         String campus = req.getParameter("campus");
-        Gson gson = new Gson();
         ClassRoomAction classRoomAction = new ClassRoomAction();
         ClassRoomModel classRoomModel = classRoomAction.get(weeks, name, campus);
-        return gson.toJson(classRoomModel);
+        return classRoomModel;
     }
 }
