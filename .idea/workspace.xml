@@ -7,39 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759dc6db-6f36-4e5f-9c8f-581358465c47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/RankAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/RankController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/rank-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreRankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreRankController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/sign.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/sign.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -113,48 +81,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="33" column="26" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="576">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LNTUPlus.iml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="648">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Messages___Asynchronous_save_information___GaoRuiLian_.patch">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -263,7 +217,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Feedback.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/FeedbackController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeTestController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/HelloAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java" />
@@ -298,7 +251,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java" />
@@ -311,6 +263,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -746,7 +700,7 @@
       <workItem from="1558403673333" duration="2744000" />
       <workItem from="1558950725873" duration="5168000" />
       <workItem from="1560154007474" duration="4839000" />
-      <workItem from="1560819953239" duration="787000" />
+      <workItem from="1560819953239" duration="1007000" />
     </task>
     <task id="LOCAL-00001" summary="feat: first commit.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian.">
       <created>1550675009105</created>
@@ -776,11 +730,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555233541338</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Messages:&#10;&#10;RankController Update&#10;&#10;GaoRuiLian.">
+      <created>1561168742375</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1561168742375</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383739000" />
+    <option name="totallyTimeSpent" value="383959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -793,6 +754,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1374" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974925" visible="true" weight="0.14177918" />
       <window_info id="Structure" order="1" sideWeight="0.50328225" side_tool="true" weight="0.27682403" />
@@ -838,7 +800,8 @@
     <MESSAGE value="feat: first commit.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian." />
     <MESSAGE value="feat: commit all files.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian." />
     <MESSAGE value="Messages:&#10;&#10;Asynchronous save information.&#10;&#10;GaoRuiLian." />
-    <option name="LAST_COMMIT_MESSAGE" value="Messages:&#10;&#10;Asynchronous save information.&#10;&#10;GaoRuiLian." />
+    <MESSAGE value="Messages:&#10;&#10;RankController Update&#10;&#10;GaoRuiLian." />
+    <option name="LAST_COMMIT_MESSAGE" value="Messages:&#10;&#10;RankController Update&#10;&#10;GaoRuiLian." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -894,37 +857,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.12.1/okhttp-3.12.1.jar!/okhttp3/Dispatcher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/ExamModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-          <folding>
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.12.1/okhttp-3.12.1.jar!/okhttp3/OkHttpClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2790">
-          <caret line="240" column="31" selection-start-line="240" selection-start-column="31" selection-end-line="240" selection-end-column="31" />
-          <folding>
-            <element signature="e#8662#8663#0" expanded="true" />
-            <element signature="e#8715#8716#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.12.1/okhttp-3.12.1-sources.jar!/okhttp3/OkHttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1326,11 +1258,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="576">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LNTUPlus.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages___Asynchronous_save_information___GaoRuiLian_.patch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>
