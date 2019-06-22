@@ -1,6 +1,5 @@
 package com.lntuplus.action;
 
-import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.OkHttpUtils;
 import okhttp3.Call;
 import okhttp3.Response;
@@ -106,11 +105,23 @@ public class NoticeAction {
         Elements ps = main.getElementsByTag("p");
         Elements ul = elements.getElementsByTag("ul");
         if (ul.size() > 0) {
-            Element attachment = elements.getElementsByTag("ul").get(0).getElementsByTag("li").get(0).getElementsByTag("a").get(0);
-            String attachTitle = attachment.text();
-            String attachLink = mNoticeUrl + attachment.attr("href");
-            map.put("attachTitle", attachTitle);
-            map.put("attachLink", attachLink);
+            Elements li = elements.getElementsByTag("ul").get(0).getElementsByTag("li");
+            List<Map<String, String>> attach = new ArrayList<>();
+            for (int i = 0; i < li.size(); i++) {
+                Map<String, String> item = new HashMap<>();
+                Element attachment;
+                try {
+                    attachment = li.get(i).getElementsByTag("a").get(0);
+                } catch (IndexOutOfBoundsException e) {
+                    continue;
+                }
+                String attachTitle = attachment.text();
+                String attachLink = mNoticeUrl + attachment.attr("href");
+                item.put("attachTitle", attachTitle);
+                item.put("attachLink", attachLink);
+                attach.add(item);
+            }
+            map.put("attach", attach);
         }
 
         for (int i = 0; i < ps.size(); i++) {

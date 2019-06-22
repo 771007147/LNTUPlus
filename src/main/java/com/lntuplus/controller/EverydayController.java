@@ -8,9 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Controller
 @RequestMapping(value = "/everyday")
 public class EverydayController {
@@ -19,7 +16,6 @@ public class EverydayController {
     @ResponseBody
     public Object get() {
         EverydayAction everydayAction = new EverydayAction();
-        Gson gson = GsonUtils.getInstance();
         EverydayModel everydayModel = everydayAction.get();
         return everydayModel;
     }

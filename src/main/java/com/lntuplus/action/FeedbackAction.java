@@ -4,7 +4,6 @@ import com.lntuplus.utils.ComBean;
 import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.TimeUtils;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -34,6 +34,9 @@
 
 <div class="content">
     <form action="get" method="post">
+        <a>班级格式:计算XX-X</a><br>
+        <a>日期格式:2019-01-01</a><br>
+        <a>课时格式:1(范围1-5)</a><br>
         班级：<input type="text" name="iClass"/> <br> <br>
         日期：<input type="text" name="day"/> <br> <br>
         第：<input type="text" name="no"/>节 <br> <br>

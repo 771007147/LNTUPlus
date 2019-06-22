@@ -12,8 +12,10 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
 
-import java.sql.Time;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 @Service
 @EnableAsync
@@ -29,7 +31,7 @@ public class SaveAction {
         if (flag > 0) {
             System.out.println("保存学生信息成功！学号：" + stuInfoData.getNumber());
         } else {
-            System.out.println("学生信息已存在！学号：" + stuInfoData.getNumber());
+            System.out.println("学生信息已存在！");
         }
         sqlSession.close();
     }
@@ -79,8 +81,7 @@ public class SaveAction {
         }
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
         SqlSession sqlSession = sqlSessionFactory.openSession();
-
-        int flag = sqlSession.insert("SaveMapper.scoreForeach", examData);
+        int flag = sqlSession.insert("SaveMapper.examForeach", examData);
         sqlSession.commit();
         if (flag == 0) {
             System.out.println("考试信息无需更新！");
@@ -92,10 +93,6 @@ public class SaveAction {
 
     @Async
     public void saveGPA(String number, double gpa) {
-        if (gpa == 0.0000) {
-            System.out.println("没有绩点信息，无需保存！");
-            return;
-        }
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
         SqlSession sqlSession = sqlSessionFactory.openSession();
         GPAModel gpaModel = new GPAModel();
@@ -104,13 +101,13 @@ public class SaveAction {
         gpaModel.setDate(new Date());
         int flag = sqlSession.insert("SaveMapper.gpaInsert", gpaModel);
         sqlSession.commit();
-        if (flag == 0) {
-            System.out.println("GPA无需更新！");
-        } else {
+        if (flag == 1) {
             System.out.println("更新GPA成功！GPA：" + gpa);
+        } else if (flag == 2) {
+            System.out.println("插入、覆盖GPA成功！GPA：" + gpa);
+        } else {
+            System.out.println("GPA无需更新!");
         }
         sqlSession.close();
     }
-
-
 }

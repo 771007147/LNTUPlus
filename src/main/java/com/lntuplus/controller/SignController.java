@@ -2,7 +2,6 @@ package com.lntuplus.controller;
 
 import com.lntuplus.action.SignAction;
 import com.lntuplus.model.SignModel;
-import com.lntuplus.utils.ComBean;
 import com.lntuplus.utils.DBSessionFactory;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

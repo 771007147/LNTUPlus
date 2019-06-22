@@ -14,10 +14,12 @@ public class OkHttpUtils {
     private static OkHttpUtils sOkHttpUtils;
     private static final String PORT1 = "http://202.199.224.24:11180/newacademic";
     private static final String PORT2 = "http://202.199.224.24:11081/academic";
+    private static Dispatcher dispatcher = new Dispatcher();
 
     private static OkHttpClient mOkHttpClient = new OkHttpClient().newBuilder()
-            .connectTimeout(4, TimeUnit.SECONDS)// 设置连接超时时间
-            .readTimeout(4, TimeUnit.SECONDS)// 设置读取超时时间
+            .connectTimeout(5, TimeUnit.SECONDS)// 设置连接超时时间
+            .readTimeout(3, TimeUnit.SECONDS)// 设置读取超时时间
+            .dispatcher(dispatcher)
             .build();
 
     public static OkHttpUtils getInstance() {
@@ -25,6 +27,8 @@ public class OkHttpUtils {
             synchronized (OkHttpUtils.class) {
                 if (sOkHttpUtils == null) {
                     sOkHttpUtils = new OkHttpUtils();
+                    dispatcher.setMaxRequests(1024);
+                    dispatcher.setMaxRequestsPerHost(1024);
                 }
             }
         }
@@ -51,6 +55,7 @@ public class OkHttpUtils {
             Response resp = call.execute();
             if (resp.isSuccessful()) {
                 ip = PORT1;
+                call.cancel();
                 resp.close();
                 return ip;
             } else {
@@ -59,13 +64,16 @@ public class OkHttpUtils {
                     resp = call.execute();
                     if (resp.isSuccessful()) {
                         ip = PORT1;
+                        call.cancel();
                         resp.close();
                         return ip;
                     } else {
+                        call.cancel();
                         resp.close();
                         return Constants.STRING_FAILED;
                     }
                 } catch (IOException e1) {
+                    call.cancel();
                     resp.close();
                     throw new IOException();
                 }
@@ -76,9 +84,11 @@ public class OkHttpUtils {
                 Response resp = call.execute();
                 if (resp.isSuccessful()) {
                     ip = PORT2;
+                    call.cancel();
                     resp.close();
                     return ip;
                 } else {
+                    call.cancel();
                     resp.close();
                     return Constants.STRING_FAILED;
                 }
@@ -128,6 +138,7 @@ public class OkHttpUtils {
                 s = Constants.STRING_FAILED;
                 System.out.println(TimeUtils.getTime() + " 获取sessionid失败！");
             }
+            call.cancel();
             resp.close();
         } catch (IOException e1) {
             s = Constants.STRING_ERROR;

@@ -1,7 +1,6 @@
 package com.lntuplus.controller;
 
 import com.google.gson.Gson;
-import com.lntuplus.action.LoginAction;
 import com.lntuplus.action.StuInfoAction;
 import com.lntuplus.model.StuInfoModel;
 import com.lntuplus.utils.Constants;

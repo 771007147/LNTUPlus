@@ -1,33 +1,19 @@
 package com.lntuplus.action;
 
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.concurrent.TimeUnit;
-
 import com.lntuplus.model.ExamModel;
 import com.lntuplus.utils.ComBean;
 import com.lntuplus.utils.OkHttpUtils;
-import com.lntuplus.utils.TimeUtils;
-import okhttp3.Call;
+import okhttp3.*;
 import okhttp3.FormBody.Builder;
-import okhttp3.Headers;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class GetMessages {
     private String session;

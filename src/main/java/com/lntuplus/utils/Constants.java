@@ -10,6 +10,7 @@ public class Constants {
     public static final String STRING_PASSWORD = "password";
     public static final String STRING_SESSION = "session";
     public static final String STRING_NEW_STU = "newstu";
+    public static final String STRING_QUESTIONNAIRE = "questionnaire";
     public static final String STRING_HASHCODE = "hashcode";
     public static final String STRING_500 = "500";
     public static final String STRING_DATA = "data";

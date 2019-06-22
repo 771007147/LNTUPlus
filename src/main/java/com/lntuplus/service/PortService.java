@@ -7,10 +7,9 @@ import com.lntuplus.utils.TimeUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class PortService {
     private String mPort;
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();

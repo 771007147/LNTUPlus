@@ -42,6 +42,8 @@
                 <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis-110"/>
                 <property name="username" value="root"/>
                 <property name="password" value="771007147"/>
+                <property name="poolMaximumActiveConnections" value="200"/>
+                <property name="poolMaximumIdleConnections" value="0"/>
             </dataSource>
         </environment>
         <environment id="development">
@@ -65,6 +67,7 @@
         <mapper resource="mappers/everyday-mapper.xml"/>
         <mapper resource="mappers/port-mapper.xml"/>
         <mapper resource="mappers/save-mapper.xml"/>
+        <mapper resource="mappers/rank-mapper.xml"/>
 
     </mappers>
 

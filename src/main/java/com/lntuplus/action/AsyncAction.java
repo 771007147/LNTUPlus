@@ -26,7 +26,7 @@ public class AsyncAction {
         if (stuInfoMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             StuInfoModel stuInfoData = (StuInfoModel) stuInfoMap.get(Constants.STRING_DATA);
             stuInfoData.setPassword(password);
-            mSaveAction.saveStuInfo(stuInfoData);
+//            mSaveAction.saveStuInfo(stuInfoData);
         }
         System.out.println("获取学生信息完毕");
         return new AsyncResult<>(stuInfoMap);
@@ -39,8 +39,8 @@ public class AsyncAction {
         if (scoreMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             List<Map<String, Object>> scoreData = (List<Map<String, Object>>) scoreMap.get(Constants.STRING_DATA);
             double gpa = (double) scoreMap.get(Constants.STRING_GPA);
-            mSaveAction.saveScore(scoreData);
-            mSaveAction.saveGPA(number, gpa);
+//            mSaveAction.saveScore(scoreData);
+//            mSaveAction.saveGPA(number, gpa);
         }
         System.out.println("获取学生成绩完毕");
         return new AsyncResult<>(scoreMap);
@@ -52,7 +52,7 @@ public class AsyncAction {
         Map<String, Object> examMap = new ExamAction().get(port, session, number);
         if (examMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             List<ExamModel> examData = (List<ExamModel>) examMap.get(Constants.STRING_DATA);
-            mSaveAction.saveExam(examData);
+//            mSaveAction.saveExam(examData);
         }
         System.out.println("获取学生考试完毕");
         return new AsyncResult<>(examMap);
@@ -68,5 +68,20 @@ public class AsyncAction {
         List<List<List<TableModel>>> tableData = (List<List<List<TableModel>>>) tableMap.get(Constants.STRING_DATA);
         System.out.println("获取学生课表完毕");
         return new AsyncResult<>(tableMap);
+    }
+
+    @Async
+    public void saveScore(List<Map<String, Object>> scoreData, String number, double gpa) {
+        System.out.println("保存学生成绩..");
+        mSaveAction.saveScore(scoreData);
+        mSaveAction.saveGPA(number, gpa);
+        System.out.println("保存学生成绩完毕");
+    }
+
+    @Async
+    public void saveExam(List<ExamModel> examData) {
+        System.out.println("保存学生考试..");
+        mSaveAction.saveExam(examData);
+        System.out.println("保存学生考试完毕");
     }
 }

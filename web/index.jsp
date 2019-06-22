@@ -13,6 +13,13 @@
 </head>
 <body>
 
+<h1>SpecialtyGPARank</h1>
+<form action="rank/gpa" method="post">
+    <input type="text" name="number" value="1606110204">
+    <input type="text" name="gpa" value="2.3778">
+    <input type="submit" style="width:80px;"/>
+</form>
+
 <h1>WeekNo</h1>
 <form action="time/week" method="get">
     <input type="submit" style="width:80px;"/>

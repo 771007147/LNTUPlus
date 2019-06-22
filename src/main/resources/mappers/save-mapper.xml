@@ -93,7 +93,7 @@
             #{item.date},
             #{item.time},
             #{item.address},
-            #{item.datetime}
+            #{item.dateTime}
             )
         </foreach>
     </insert>
@@ -103,7 +103,7 @@
     </delete>
 
     <insert id="gpaInsert" parameterType="com.lntuplus.model.GPAModel">
-        INSERT IGNORE INTO gpa VALUES(#{number},#{gpa},#{date})
+        INSERT INTO gpa VALUES(#{number},#{gpa},#{date}) ON DUPLICATE KEY UPDATE gpa= #{gpa},date=#{date}
     </insert>
 
 </mapper>

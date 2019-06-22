@@ -61,6 +61,8 @@ public class TableAction {
         } catch (IOException e) {
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
             System.out.println(TimeUtils.getTime() + " 获取Table失败！");
+            mResponse.close();
+            return map;
         }
         map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
         mResponse.close();
@@ -268,34 +270,6 @@ public class TableAction {
             return true;
         }
         return false;
-    }
-
-    private int getYear() {
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = TimeUtils.firstMonDay(year, 3);
-        Date now = new Date();
-        calendar.set(Calendar.MONTH, month);
-        calendar.set(Calendar.DAY_OF_MONTH, day);
-        Date date = calendar.getTime();
-
-        if (now.before(date)) {
-            return year - 1980 - 1;
-        }
-        return year - 1980;
-    }
-
-    private int getTerm() {
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        Date now = new Date();
-        Date marchMon = TimeUtils.firstMonDate(year, 3);
-        Date septMon = TimeUtils.firstMonDate(year, 9);
-        if (now.after(marchMon) && now.before(septMon)) {
-            return 1;
-        }
-        return 2;
     }
 
     private void getNewYearTerm() {

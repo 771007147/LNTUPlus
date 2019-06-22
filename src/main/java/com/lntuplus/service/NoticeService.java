@@ -5,14 +5,13 @@ import com.lntuplus.utils.TimeUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletContext;
 import java.util.List;
 import java.util.Map;
 
-@Component
+@Controller
 public class NoticeService implements InitializingBean {
 
     //全局Context

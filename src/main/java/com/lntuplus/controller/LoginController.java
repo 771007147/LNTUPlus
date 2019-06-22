@@ -1,14 +1,15 @@
 package com.lntuplus.controller;
 
 import com.google.gson.Gson;
-import com.lntuplus.action.*;
+import com.lntuplus.action.AsyncAction;
 import com.lntuplus.model.ExamModel;
 import com.lntuplus.model.StuInfoModel;
 import com.lntuplus.model.TableModel;
-import com.lntuplus.utils.*;
-import javafx.beans.binding.ObjectBinding;
+import com.lntuplus.utils.Constants;
+import com.lntuplus.utils.GsonUtils;
+import com.lntuplus.utils.OkHttpUtils;
+import com.lntuplus.utils.TimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Field;
 import java.util.*;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 @Controller
 @RequestMapping(value = "/login")
@@ -28,9 +27,6 @@ import java.util.concurrent.TimeUnit;
 public class LoginController {
 
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
-
-    @Autowired
-    private SaveAction mSaveAction;
 
     @Autowired
     private AsyncAction mAsyncAction;
@@ -43,7 +39,6 @@ public class LoginController {
     @SuppressWarnings("unchecked")
     public Object get(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         resp.setContentType("application/json; charset=utf-8");
-
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
         String number = req.getParameter("number");
@@ -62,53 +57,11 @@ public class LoginController {
         Future<Map<String, Object>> examFuture = mAsyncAction.getExam(port, session, number);
         Future<Map<String, Object>> tableFuture = mAsyncAction.getTable(port, session);
 
-//        Map<String, Object> stuInfoMap = new StuInfoAction().get(port, session);
-//        if (!stuInfoMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
-//            System.out.println(TimeUtils.getTime() + " getStuInfo失败：" + stuInfoMap.get(Constants.STRING_SUCCESS));
-//            map.put(Constants.STRING_SUCCESS,stuInfoMap.get(Constants.STRING_SUCCESS));
-//            return gson.toJson(map);
-//        }
-//        StuInfoModel stuInfoData = (StuInfoModel) stuInfoMap.get(Constants.STRING_DATA);
-//        stuInfoData.setPassword(password);
-//        map.put(Constants.STRING_STU_INFO, stuInfoData);
-
-        //异步保存学生信息
-//        mSaveAction.saveStuInfo(stuInfoData);
-//        mSaveAction.saveStuInfo(stuInfoData);
-//
-//        Map<String, Object> scoreMap = new ScoreAction().get(port, session, number);
-//        if (!scoreMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)){
-//            map.put(Constants.STRING_SUCCESS,scoreMap.get(Constants.STRING_SUCCESS));
-//            return gson.toJson(map);
-//        }
-//        List<Map<String, Object>> scoreData = (List<Map<String, Object>>) scoreMap.get(Constants.STRING_DATA);
-//        map.put(Constants.STRING_SCORE,scoreData);
-//        map.put(Constants.STRING_GPA, scoreMap.get(Constants.STRING_GPA));
-//        map.put(Constants.STRING_SUCCESS,Constants.STRING_SUCCESS);
-
-        //异步保存成绩信息
-//        mSaveAction.saveScore(scoreData);
-//        Map<String, Object> examMap = new ExamAction().get(port, session, number);
-//        if (!examMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)){
-//            map.put(Constants.STRING_SUCCESS,examMap.get(Constants.STRING_SUCCESS));
-//            return gson.toJson(map);
-//        }
-//        List<ExamModel> examData = (List<ExamModel>) examMap.get(Constants.STRING_DATA);
-//        map.put(Constants.STRING_EXAM, examData);
-//
-//        Map<String, Object> tableMap = new TableAction().get(port, session);
-//        if (!tableMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)){
-//            map.put(Constants.STRING_SUCCESS,tableMap.get(Constants.STRING_SUCCESS));
-//            return gson.toJson(map);
-//        }
-//        List<List<List<TableModel>>> tableData = (List<List<List<TableModel>>>) tableMap.get(Constants.STRING_DATA);
-//        map.put(Constants.STRING_TABLE, tableData);
-//        reflectStuInfo(stuInfoData);
         while (true) {
             if (stuInfoFuture.isDone() && scoreFuture.isDone() && examFuture.isDone() && tableFuture.isDone()) {
                 break;
             }
-            Thread.sleep(100);
+            Thread.sleep(50);
         }
         Map<String, Object> stuInfoMap = stuInfoFuture.get();
         if (!stuInfoMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
@@ -151,30 +104,4 @@ public class LoginController {
         return map;
     }
 
-    @Async
-    public void saveData(List<Map<String, Object>> scoreData, StuInfoModel stuInfoData) {
-        System.out.println(Thread.currentThread().getId());
-        Queue<List<Map<String, Object>>> mScore = (Queue<List<Map<String, Object>>>) servletContext.getAttribute("score");
-        if (mScore == null) {
-            mScore = new LinkedList<>();
-        }
-        mScore.add(scoreData);
-        servletContext.setAttribute("score", scoreData);
-        Queue<StuInfoModel> mStuinfo = (Queue<StuInfoModel>) servletContext.getAttribute("stuinfo");
-        if (mStuinfo == null) {
-            mStuinfo = new LinkedList<>();
-        }
-        mStuinfo.add(stuInfoData);
-        servletContext.setAttribute("stuinfo", mStuinfo);
-    }
-
-    private void reflectStuInfo(StuInfoModel e) throws Exception {
-        Class cls = e.getClass();
-        Field[] fields = cls.getDeclaredFields();
-        for (int i = 0; i < fields.length; i++) {
-            Field f = fields[i];
-            f.setAccessible(true);
-            System.out.println(f.getName() + ":" + f.get(e));
-        }
-    }
 }

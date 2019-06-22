@@ -4,6 +4,7 @@ import com.lntuplus.model.ScoreModel;
 import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.OkHttpUtils;
 import com.lntuplus.utils.TimeUtils;
+import com.sun.tools.internal.jxc.ap.Const;
 import okhttp3.Call;
 import okhttp3.Response;
 import org.jsoup.Jsoup;
@@ -55,6 +56,10 @@ public class ScoreAction {
             }
             if (mResponse.isSuccessful()) {
                 String html = mResponse.body().string();
+                if (checkGraduateQuestionnaire(html)) {
+                    map.put(Constants.STRING_SUCCESS, Constants.STRING_QUESTIONNAIRE);
+                    return map;
+                }
                 scoreMap = parseScore(html, number);
                 map.put(Constants.STRING_SUCCESS, Constants.STRING_SUCCESS);
                 map.put(Constants.STRING_DATA, scoreMap);
@@ -206,5 +211,13 @@ public class ScoreAction {
         return map;
     }
 
+    private boolean checkGraduateQuestionnaire(String html) {
+        Document document = Jsoup.parse(html);
+        String title = document.getElementsByTag("title").get(0).text();
+        if (title.equals("问卷调查")) {
+            return true;
+        }
+        return false;
+    }
 
 }

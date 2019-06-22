@@ -1,6 +1,5 @@
 package com.lntuplus.controller;
 
-import com.google.gson.Gson;
 import com.lntuplus.action.ClassRoomAction;
 import com.lntuplus.model.ClassRoomModel;
 import org.springframework.stereotype.Controller;
