@@ -2,15 +2,245 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="lntuplus" />
+      <artifact name="LNTUPlus:exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="759dc6db-6f36-4e5f-9c8f-581358465c47" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="759dc6db-6f36-4e5f-9c8f-581358465c47" name="Default Changelist" comment="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian.">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_okhttp3_okhttp_3_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages___Asynchronous_save_information___GaoRuiLian_.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/okio-1.17.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/META-INF/LNTUPlus.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ArticleAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/AsyncAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ClassRoomAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/Evaluate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/EverydayAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ExamAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/FeedbackAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/GetMessages.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/HelloAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/LoginAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/NoticeAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/RankAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/SaveAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ScoreAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ScoreRankAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/SignAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/StuInfoAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/TableAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ArticleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/CETController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/CetModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ChooseTableController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ClassRoomController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/EnrollModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/EverydayController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ExamController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/FeedbackController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/HelloController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/NewTableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/NoticeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/OldTableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/RankController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ScoreController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ScoreRankController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/SignController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/StuInfoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/TableController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/TimeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/WeekController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/dao/PortDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/interfaces/ILoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/ActivityModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/ArticleModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/ClassRoomModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/EverydayModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/ExamModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/GPAModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/HelloModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/NoticeModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/ScoreModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/SignModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/StuInfoModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/model/TableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/DBService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/NoticeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/PortService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/ComBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/DBO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/DBSessionFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/DayUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/GsonUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/JDBCUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/OkHttpUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/TimeUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/article-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/everyday-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/hello-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/notice-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/port-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/rank-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/save-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/sign-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/HikariCP-java6-2.3.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/annotations-13.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/aopalliance-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/c3p0-0.9.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/commons-beanutils-1.9.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/commons-collections-3.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/gson-2.8.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/jsoup-1.11.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/kotlin-stdlib-1.2.60.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/kotlin-stdlib-common-1.2.60.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/log4j-api-2.11.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/log4j-core-2.11.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/mchange-commons-java-0.2.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/mybatis-3.5.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/mysql-connector-java-8.0.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/okhttp-3.12.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/okio-2.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/protobuf-java-3.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/quartz-2.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/slf4j-api-1.7.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-aop-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-aspects-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-beans-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-context-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-context-support-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-core-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-expression-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-instrument-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-instrument-tomcat-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-jdbc-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-jms-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-messaging-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-orm-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-oxm-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-test-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-tx-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-web-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-webmvc-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-webmvc-portlet-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/spring-websocket-4.3.18.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/view/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/view/sign.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/view/success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/lntuplus/lntuplus.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/interfaces/ILoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ArticleAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/AsyncAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ClassRoomAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/Evaluate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/EverydayAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ExamAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/FeedbackAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/GetMessages.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/HelloAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/LoginAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/NoticeAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/RankAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/SaveAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ScoreAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ScoreRankAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/SignAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/StuInfoAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/TableAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ArticleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/CETController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/CetModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ChooseTableController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ClassRoomController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/EnrollModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/EverydayController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ExamController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/FeedbackController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/HelloController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/NewTableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/NoticeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/OldTableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/RankController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ScoreController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ScoreRankController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/SignController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/StuInfoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/TableController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/TimeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/WeekController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/dao/PortDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/interfaces/ILoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/ActivityModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/ArticleModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/ClassRoomModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/EverydayModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/ExamModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/GPAModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/HelloModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/NoticeModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/ScoreModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/SignModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/StuInfoModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/TableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/service/DBService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/service/NoticeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/service/PortService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/ComBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/DBO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/DBSessionFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/DayUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/GsonUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/JDBCUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/OkHttpUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/TimeUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/article-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/everyday-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/hello-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/notice-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/port-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/rank-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/save-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/sign-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LNTUPlus_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LNTUPlus_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/lntuplus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/lntuplus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/CETController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/CETController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ChooseTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ChooseTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/WeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/WeekController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/DBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,115 +264,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/GPAModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#182#183#0" expanded="true" />
-                <element signature="e#211#212#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#321#322#0" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-                <element signature="e#385#386#0" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#541#542#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/NoticeModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LNTUPlus.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Messages___Asynchronous_save_information___GaoRuiLian_.patch">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1674">
-              <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -154,54 +275,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>(List)</find>
-      <find>weeks</find>
-      <find>buildingname</find>
-      <find>new TimeUtils().getTime()</find>
-      <find>.git</find>
-      <find>schoolNoticeModel</find>
-      <find>update</find>
-      <find>resp.close</find>
-      <find>number</find>
-      <find>tt</find>
-      <find>parsetable</find>
-      <find>, item.length()</find>
-      <find>(Element)</find>
-      <find>Evaluate.this.</find>
-      <find>evaluateData</find>
-      <find>requestbody</find>
-      <find>getuseableport</find>
-      <find>System.out.pr</find>
-      <find>nowweek</find>
-      <find>quartz</find>
-      <find>response</find>
-      <find>filePath</find>
-      <find>DEFAULT_SIZE</find>
-      <find>getwidth</find>
-      <find>size</find>
-      <find>getbufferedimage</find>
-      <find>system.out.pr</find>
-      <find>system.out</find>
-      <find>Thread.</find>
-      <find>gpa</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>mItemUrl</replace>
-      <replace>mClient</replace>
-      <replace>noticeMain</replace>
-      <replace>new TimeUtils().getTime()</replace>
-      <replace>sBuildingName</replace>
-      <replace>TimeUtils.getTime()</replace>
-      <replace>noticeModel</replace>
-      <replace>updateHashcode</replace>
-      <replace>itme</replace>
-      <replace>s</replace>
-      <replace>mNumber</replace>
-      <replace>map</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
@@ -211,61 +284,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Feedback.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/FeedbackController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeTestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/HelloAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/notice-mapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ScoreModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveThread.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/StuInfoModel.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/SaveService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/ExamModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/model/GAPModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreRankController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/sign.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/rank-mapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/RankController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/RankAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-      </list>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
     </option>
   </component>
   <component name="LogFilters">
@@ -282,146 +305,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="LNTUPlus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="LNTUPlus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="LNTUPlus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="834" />
-  </component>
+  <component name="ProjectId" id="1Q5fS5RZt74281oKKuMaAu3egsj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lntuplus" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LNTUPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LNTUPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -432,27 +318,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553935499698" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.26091954" />
+    <property name="project.structure.side.proportion" value="0.33448276" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
       <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus/utils" />
       <recent name="$PROJECT_DIR$/web/views" />
       <recent name="$PROJECT_DIR$/web/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/WEB-INF/views" />
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -700,7 +587,36 @@
       <workItem from="1558403673333" duration="2744000" />
       <workItem from="1558950725873" duration="5168000" />
       <workItem from="1560154007474" duration="4839000" />
-      <workItem from="1560819953239" duration="1007000" />
+      <workItem from="1560819953239" duration="1111000" />
+      <workItem from="1561169026399" duration="504000" />
+      <workItem from="1562474996168" duration="11000" />
+      <workItem from="1562475864617" duration="9990000" />
+      <workItem from="1562568938548" duration="3036000" />
+      <workItem from="1562600907515" duration="312000" />
+      <workItem from="1562647162216" duration="276000" />
+      <workItem from="1562661223594" duration="1364000" />
+      <workItem from="1562726460553" duration="3442000" />
+      <workItem from="1562816800527" duration="3161000" />
+      <workItem from="1562820847101" duration="303000" />
+      <workItem from="1563012526409" duration="682000" />
+      <workItem from="1563079190837" duration="473000" />
+      <workItem from="1563079757132" duration="991000" />
+      <workItem from="1566905764417" duration="679000" />
+      <workItem from="1567058703897" duration="707000" />
+      <workItem from="1567064786871" duration="28000" />
+      <workItem from="1567064846568" duration="478000" />
+      <workItem from="1567065380920" duration="296000" />
+      <workItem from="1567079244729" duration="5450000" />
+      <workItem from="1567403969228" duration="1110000" />
+      <workItem from="1567647113543" duration="2345000" />
+      <workItem from="1567650042985" duration="1166000" />
+      <workItem from="1567748890608" duration="714000" />
+      <workItem from="1568012861328" duration="209000" />
+      <workItem from="1568131918798" duration="5132000" />
+      <workItem from="1568170192391" duration="744000" />
+      <workItem from="1568264815846" duration="105000" />
+      <workItem from="1568264952363" duration="1344000" />
+      <workItem from="1568468601136" duration="489000" />
     </task>
     <task id="LOCAL-00001" summary="feat: first commit.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian.">
       <created>1550675009105</created>
@@ -737,11 +653,22 @@
       <option name="project" value="LOCAL" />
       <updated>1561168742375</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian.">
+      <created>1561168873653</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561168873653</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian.">
+      <created>1561168883401</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561168883401</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -752,56 +679,29 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1374" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974925" visible="true" weight="0.14177918" />
-      <window_info id="Structure" order="1" sideWeight="0.50328225" side_tool="true" weight="0.27682403" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.5025075" side_tool="true" weight="0.1604448" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49284694" weight="0.35959437" />
-      <window_info anchor="bottom" x="0" y="560" width="2560" height="302" id="Debug" order="3" sideWeight="0.49563146" weight="0.44617784" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32943013" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32839838" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32974428" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5071531" side_tool="true" weight="0.32080537" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49722" weight="0.31993568" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Duplicate detector" order="16" weight="0.32885906" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.13820492" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32962668" />
-      <window_info anchor="right" id="Database" order="6" weight="0.32934132" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Maven" order="9" weight="0.3298611" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: first commit.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian." />
     <MESSAGE value="feat: commit all files.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian." />
     <MESSAGE value="Messages:&#10;&#10;Asynchronous save information.&#10;&#10;GaoRuiLian." />
     <MESSAGE value="Messages:&#10;&#10;RankController Update&#10;&#10;GaoRuiLian." />
-    <option name="LAST_COMMIT_MESSAGE" value="Messages:&#10;&#10;RankController Update&#10;&#10;GaoRuiLian." />
+    <MESSAGE value="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian." />
+    <option name="LAST_COMMIT_MESSAGE" value="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -810,43 +710,36 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
           <line>149</line>
-          <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
           <line>150</line>
-          <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
           <line>151</line>
-          <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
           <line>152</line>
-          <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
           <line>154</line>
-          <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
           <line>153</line>
-          <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/github/xuwei-k/html2image/0.1.0/html2image-0.1.0-sources.jar!/gui/ava/html/image/generator/HtmlImageGenerator.java</url>
           <line>44</line>
-          <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
@@ -855,516 +748,5 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.12.1/okhttp-3.12.1-sources.jar!/okhttp3/OkHttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.12.1/okhttp-3.12.1-sources.jar!/okhttp3/Dispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="49" column="87" lean-forward="true" selection-start-line="49" selection-start-column="87" selection-end-line="49" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/sign.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreRankController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1818">
-          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/StuInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="39" column="64" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TimeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/WeekController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1746">
-          <caret line="112" column="5" lean-forward="true" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/Evaluate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="68" column="35" selection-end-line="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/FeedbackController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ArticleAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="37" column="57" lean-forward="true" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/ScoreModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/rank-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/RankAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="116" column="27" lean-forward="true" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1804#1805#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
-            <element signature="e#1905#1906#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
-            <element signature="e#2363#2364#0" expanded="true" />
-            <element signature="e#2400#2401#0" expanded="true" />
-            <element signature="e#2434#2435#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/RankController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/HelloAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/HelloModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="52" column="25" selection-start-line="52" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="53" column="27" selection-start-line="53" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="982">
-          <caret line="68" column="38" lean-forward="true" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1674">
-          <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/GPAModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#211#212#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/model/NoticeModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lntuplus/service/HelloService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LNTUPlus.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Messages___Asynchronous_save_information___GaoRuiLian_.patch">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>lntuplus</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.26091954" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Web (LNTUPlus)|Web</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.26091954" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.4183908" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.4183908" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>LNTUPlus</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.26091954" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Spring-4.3.18.RELEASE</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.26091954" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

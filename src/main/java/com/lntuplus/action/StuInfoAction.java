@@ -45,6 +45,7 @@ public class StuInfoAction {
                 return map;
             }
         } catch (IOException e1) {
+            mResponse.close();
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
             return map;
         }

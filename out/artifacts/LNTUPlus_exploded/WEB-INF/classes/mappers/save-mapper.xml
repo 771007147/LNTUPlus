@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<mapper namespace="SaveMapper">
+    <!-- statement，内容：sql语句。id：唯一标识，随便写，在同一个命名空间下保持唯一
+       resultType：sql语句查询结果集的封装类型,tb_user即为数据库中的表
+     -->
+
+    <select id="stuinfoCount" parameterType="com.lntuplus.model.StuInfoModel" resultType="int">
+        select count(*) from stuInfo where number = #{number}
+    </select>
+
+    <select id="stuinfoInsert" parameterType="com.lntuplus.model.StuInfoModel">
+        insert ignore into stuInfo values (
+        #{number},
+        #{password},
+        #{nationality},
+        #{name},
+        #{place},
+        #{engName},
+        #{birth},
+        #{typeOfID},
+        #{politicalStatus},
+        #{card},
+        #{vehicleInterval},
+        #{sex},
+        #{nation},
+        #{academic},
+        #{professional},
+        #{iClass},
+        #{stuType},
+        #{examArea},
+        #{score},
+        #{registrationNumber},
+        #{school},
+        #{languageType},
+        #{comeDate},
+        #{enrollmentType},
+        #{goDate},
+        #{trainingMode},
+        #{address},
+        #{phone},
+        #{email},
+        #{origin},
+        #{imgUrl})
+    </select>
+
+    <select id="scoreCount" parameterType="com.lntuplus.model.ScoreModel" resultType="int">
+        select count(*) from score where number = #{number}
+    </select>
+
+    <insert id="scoreInsert" parameterType="com.lntuplus.model.ScoreModel">
+        insert into score values (#{number},#{course},#{mode},#{year},#{score},#{credit},#{cNumber},#{cNo},#{examType},#{properties},#{remark},#{delayed},#{openUnit},#{teacher},#{scoreInfo},#{normalScore},#{midScore},#{endScore},#{examRoom},#{seatNum},#{datetime})
+    </insert>
+
+    <insert id="scoreForeach" parameterType="List" useGeneratedKeys="false">
+        insert ignore into score values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.number},
+            #{item.course},
+            #{item.mode},
+            #{item.year},
+            #{item.score},
+            #{item.credit},
+            #{item.cNumber},
+            #{item.cNo},
+            #{item.examType},
+            #{item.properties},
+            #{item.remark},
+            #{item.delayed},
+            #{item.openUnit},
+            #{item.teacher},
+            #{item.scoreInfo},
+            #{item.normalScore},
+            #{item.midScore},
+            #{item.endScore},
+            #{item.examRoom},
+            #{item.seatNum},
+            #{item.datetime}
+            )
+        </foreach>
+    </insert>
+
+    <insert id="examForeach" parameterType="List" useGeneratedKeys="false">
+        insert ignore into exam values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.number},
+            #{item.course},
+            #{item.date},
+            #{item.time},
+            #{item.address},
+            #{item.dateTime}
+            )
+        </foreach>
+    </insert>
+
+    <delete id="scoreDelete" parameterType="com.lntuplus.model.ScoreModel">
+        DELETE FROM score WHERE number = #{number}
+    </delete>
+
+    <insert id="gpaInsert" parameterType="com.lntuplus.model.GPAModel">
+        INSERT INTO gpa VALUES(#{number},#{gpa},#{date}) ON DUPLICATE KEY UPDATE gpa= #{gpa},date=#{date}
+    </insert>
+
+</mapper>

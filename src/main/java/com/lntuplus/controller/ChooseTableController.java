@@ -13,10 +13,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,6 +29,10 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/choose")
 public class ChooseTableController {
+
+    //全局Context
+    @Autowired
+    private ServletContext servletContext;
 
     private String mShowPostUrl = "/student/tiyu_xk/xx_xk.jsp?groupId=&moduleId=1510";
     private String mShowUrl = "/student/tiyu_xk/xx_xk1.jsp";
@@ -43,12 +49,14 @@ public class ChooseTableController {
         String password = req.getParameter("password");
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
         }
-        String port = loginMap.get(Constants.STRING_PORT);
+//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         String showPostUrl = port + mShowPostUrl;
         mCall = mOkHttpUtils.getInfoCall(showPostUrl, session);
@@ -87,12 +95,14 @@ public class ChooseTableController {
         String cNumber = req.getParameter("cNumber");
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
         }
-        String port = loginMap.get(Constants.STRING_PORT);
+//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         String choosePostUrl = port + mPostUrl + select;
         mCall = mOkHttpUtils.getInfoCall(choosePostUrl, session);
@@ -132,12 +142,14 @@ public class ChooseTableController {
         String cNumber = req.getParameter("cNumber");
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
         }
-        String port = loginMap.get(Constants.STRING_PORT);
+//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         String postUrl = port + mPostUrl + delete;
         mCall = mOkHttpUtils.getInfoCall(postUrl, session);

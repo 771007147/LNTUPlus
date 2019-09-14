@@ -12,6 +12,12 @@ public class WeekController {
     @ResponseBody
     @RequestMapping(value = "/get")
     public Object get() {
-        return TimeUtils.weekNo();
+        int week = TimeUtils.weekNo();
+        if (week == 25) {
+            return 0;
+        } else {
+            return week + 1;
+        }
+//        return TimeUtils.weekNo();
     }
 }

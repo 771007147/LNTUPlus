@@ -35,6 +35,17 @@ public class TimeUtils {
         return date;
     }
 
+    public static Date toDateTime(String s) {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        try {
+            date = df.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
     public static String stampToDate(Long stamp) {
         String res;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -69,6 +80,11 @@ public class TimeUtils {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.MONTH, month - 1);
+        cal.set(Calendar.HOUR_OF_DAY,0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+
         int day = 1;
         cal.set(Calendar.DAY_OF_MONTH, day);
         while (cal.get(Calendar.DAY_OF_WEEK) != Calendar.MONDAY) {

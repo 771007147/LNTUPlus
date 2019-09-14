@@ -2,6 +2,7 @@ package com.lntuplus.controller;
 
 import com.google.gson.Gson;
 import com.lntuplus.action.AsyncAction;
+import com.lntuplus.interfaces.ILoginController;
 import com.lntuplus.model.ExamModel;
 import com.lntuplus.model.StuInfoModel;
 import com.lntuplus.model.TableModel;
@@ -24,7 +25,7 @@ import java.util.concurrent.Future;
 @Controller
 @RequestMapping(value = "/login")
 @EnableAsync
-public class LoginController {
+public class LoginController implements ILoginController {
 
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
 
@@ -44,12 +45,12 @@ public class LoginController {
         String number = req.getParameter("number");
         String password = req.getParameter("password");
         System.out.println("学号：" + number + "登录中...");
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
         }
-        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
 
         Future<Map<String, Object>> stuInfoFuture = mAsyncAction.getStuInfo(port, session, password);
@@ -57,11 +58,17 @@ public class LoginController {
         Future<Map<String, Object>> examFuture = mAsyncAction.getExam(port, session, number);
         Future<Map<String, Object>> tableFuture = mAsyncAction.getTable(port, session);
 
+        long start = System.currentTimeMillis();
         while (true) {
             if (stuInfoFuture.isDone() && scoreFuture.isDone() && examFuture.isDone() && tableFuture.isDone()) {
                 break;
             }
-            Thread.sleep(50);
+            Thread.sleep(500);
+            if((System.currentTimeMillis()-start)/1000>10){
+                System.out.println("轮询等待多线程返回超时！");
+                map.put(Constants.STRING_SUCCESS, Constants.STRING_TIME);
+                return map;
+            }
         }
         Map<String, Object> stuInfoMap = stuInfoFuture.get();
         if (!stuInfoMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
@@ -75,6 +82,8 @@ public class LoginController {
 
         Map<String, Object> scoreMap = scoreFuture.get();
         if (!scoreMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
+            System.out.println(TimeUtils.getTime() + " scoreMap：" + stuInfoMap.get(Constants.STRING_SUCCESS));
+
             map.put(Constants.STRING_SUCCESS, scoreMap.get(Constants.STRING_SUCCESS));
             return map;
         }
@@ -85,6 +94,8 @@ public class LoginController {
 
         Map<String, Object> examMap = examFuture.get();
         if (!examMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
+            System.out.println(TimeUtils.getTime() + " examMap：" + stuInfoMap.get(Constants.STRING_SUCCESS));
+
             map.put(Constants.STRING_SUCCESS, examMap.get(Constants.STRING_SUCCESS));
             return map;
         }
@@ -94,14 +105,35 @@ public class LoginController {
         Map<String, Object> tableMap = tableFuture.get();
         if (!tableMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, tableMap.get(Constants.STRING_SUCCESS));
+            System.out.println(TimeUtils.getTime() + " tableMap：" + tableMap.get(Constants.STRING_SUCCESS));
+
             return map;
         }
         List<List<List<TableModel>>> tableData = (List<List<List<TableModel>>>) tableMap.get(Constants.STRING_DATA);
         map.put(Constants.STRING_TABLE, tableData);
-//        reflectStuInfo(stuInfoData);
+////        reflectStuInfo(stuInfoData);
 
         System.out.println("登陆成功！学号：" + number);
         return map;
     }
 
+    @Override
+    public void stuInfoCallback(Map<String, Object> map) {
+
+    }
+
+    @Override
+    public void scoreCallback(Map<String, Object> map) {
+
+    }
+
+    @Override
+    public void examCallback(Map<String, Object> map) {
+
+    }
+
+    @Override
+    public void tableCallback(Map<String, Object> map) {
+
+    }
 }

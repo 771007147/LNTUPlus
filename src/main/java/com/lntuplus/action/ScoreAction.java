@@ -68,6 +68,8 @@ public class ScoreAction {
                 return map;
             }
         } catch (IOException e) {
+            if (mResponse != null)
+                mResponse.close();
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
             System.out.println(TimeUtils.getTime() + " 获取Score失败！");
         }

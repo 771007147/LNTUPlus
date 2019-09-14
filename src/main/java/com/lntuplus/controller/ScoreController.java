@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +20,10 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/score")
 public class ScoreController {
+
+    //全局Context
+    @Autowired
+    private ServletContext servletContext;
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
     @Autowired
     private AsyncAction mAsyncAction;
@@ -31,14 +36,15 @@ public class ScoreController {
         Map<String, Object> map = new HashMap<>();
 
         System.out.println(number + " 开始获取成绩...");
+        String port = (String) servletContext.getAttribute("port");
 
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             System.out.println(number + " 登录失败！");
             return map;
         }
-        String port = loginMap.get(Constants.STRING_PORT);
+//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         Map<String, Object> scoreMap = new ScoreAction().get(port, session, number);
         if (!scoreMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {

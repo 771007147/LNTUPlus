@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<mapper namespace="NoticeMapper">
+    <!-- statement，内容：sql语句。id：唯一标识，随便写，在同一个命名空间下保持唯一
+       resultType：sql语句查询结果集的封装类型,tb_user即为数据库中的表
+     -->
+    <select id="count_all_hashcode" resultType="int">
+      select count(hashcode) from notice where pNo = 0 and rNo = 0
+   </select>
+
+    <select id="hashcode" resultType="int">
+      select hashcode from notice where pNo = 0 and rNo = 0
+   </select>
+
+    <insert id="insert_hashcode" parameterType="com.lntuplus.model.NoticeModel">
+      insert into notice values ( #{hashcode}, 0, 0, 0, #{datetime} )
+   </insert>
+
+    <select id="select_hashcode" resultType="int" parameterType="com.lntuplus.model.NoticeModel">
+      select hashcode from notice where pNo = #{pNo} and rNo = #{rNo}
+   </select>
+
+    <select id="count_hashcode" resultType="int" parameterType="com.lntuplus.model.NoticeModel">
+      select count(hashcode) from notice where pNo = #{pNo} and rNo = #{rNo}
+   </select>
+
+    <insert id="insert" parameterType="com.lntuplus.model.NoticeModel">
+      insert into notice values ( #{hashcode}, #{pNo}, #{rNo}, #{notices}, #{datetime} )
+   </insert>
+
+    <update id="update" parameterType="com.lntuplus.model.NoticeModel">
+        update notice set hashcode = #{hashcode} ,notices = #{notices} ,datetime = #{datetime} where pNo = #{pNo} and rNo = #{rNo}
+    </update>
+
+    <update id="update_hashcode" parameterType="com.lntuplus.model.NoticeModel">
+        update notice set hashcode = #{hashcode} ,datetime = #{datetime} where pNo = 0 and rNo = 0
+    </update>
+
+    <select id="select_notices" resultType="com.lntuplus.model.NoticeModel"
+            parameterType="com.lntuplus.model.NoticeModel">
+        select * from notice where pNo = #{pNo} and rNo = #{rNo}
+    </select>
+</mapper>

@@ -15,10 +15,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +31,10 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/cet")
 public class CETController {
+    //全局Context
+    @Autowired
+    private ServletContext servletContext;
+
     private String mCetUrl = "/student/skilltest/skilltest.jsdo?groupId=&moduleId=2090";
     private String mEnrollUrl = "/foreignlanguage/foreignlanguage_do.jsp";
     private String mPostUrl = "/foreignlanguage/foreignlanguage_win.jsp";
@@ -40,12 +46,13 @@ public class CETController {
     @RequestMapping(value = "/get")
     public String get(HttpServletRequest req) {
         String session;
-        String port;
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
         String number = req.getParameter("number");
         String password = req.getParameter("password");
-        Map<String, String> loginMap = new LoginAction().login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+
+        Map<String, String> loginMap = new LoginAction().login(number, password,port);
         if (!loginMap.get("success").equals("success")) {
             map.put("success", loginMap.get("success"));
             System.out.println(TimeUtils.getTime() + " Login失败：" + loginMap.get("success"));
@@ -80,12 +87,14 @@ public class CETController {
         String password = req.getParameter("password");
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
         }
-        String port = loginMap.get(Constants.STRING_PORT);
+//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         String enrollUrl = port + mEnrollUrl;
         mCall = mOkHttpUtils.getInfoCall(enrollUrl, session);
@@ -115,12 +124,14 @@ public class CETController {
         String notifyid = req.getParameter("notifyid");
         String id = req.getParameter("id");
         String rz = req.getParameter("rz");
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
         }
-        String port = loginMap.get(Constants.STRING_PORT);
+//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         String postUrl = port + mPostUrl;
         FormBody.Builder builder = new FormBody.Builder();

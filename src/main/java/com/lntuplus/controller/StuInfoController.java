@@ -7,10 +7,12 @@ import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
 import com.lntuplus.utils.TimeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +20,10 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/stuinfo")
 public class StuInfoController {
+
+    //全局Context
+    @Autowired
+    private ServletContext servletContext;
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
 
     @ResponseBody
@@ -27,12 +33,13 @@ public class StuInfoController {
         String password = req.getParameter("password");
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password);
+        String port = (String) servletContext.getAttribute("port");
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
         }
-        String port = loginMap.get(Constants.STRING_PORT);
+//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         Map<String, Object> stuInfoMap = new StuInfoAction().get(port, session);
         if (!stuInfoMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {

@@ -12,7 +12,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,16 +24,18 @@ public class LoginAction {
     private OkHttpUtils mOkHttpUtils;
     private String mPort;
     private String mSession;
-    private String mSessionUrl = "/common/security/check1.jsp";
+    private String mSessionUrl = "/common/security/login.jsp";
     private String mLoginUrl = "/j_acegi_security_check";
     private String mCheckUrl = "/frameset.jsp";
 
-    public Map<String, String> login(String number, String password) {
-        SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
-        SqlSession sqlSession = sqlSessionFactory.openSession();
+    //全局Context
+    @Autowired
+    private ServletContext servletContext;
+
+    public Map<String, String> login(String number, String password,String port) {
         Map<String, String> map = new HashMap<>();
         mOkHttpUtils = OkHttpUtils.getInstance();
-        mPort = sqlSession.selectOne("PortMapper.select");
+        mPort = port;
         if (mPort.equals(Constants.STRING_FAILED) || mPort.equals(Constants.STRING_ERROR)) {
             map.put(Constants.STRING_SUCCESS, Constants.STRING_PORT);
             return map;
@@ -253,8 +257,8 @@ public class LoginAction {
     }
 
     private String post(String number, String password, String session) {
-        RequestBody formBody = new FormBody.Builder().add("j_username", number).add("j_password", password).build();
-        Call call = mOkHttpUtils.getInfoCallRequestBody(mLoginUrl, session, formBody);
+        RequestBody requestBody = new FormBody.Builder().add("j_username", number).add("j_password", password).build();
+        Call call = mOkHttpUtils.getInfoCallRequestBody(mLoginUrl, session, requestBody);
         Response resp = null;
         try {
             resp = call.execute();

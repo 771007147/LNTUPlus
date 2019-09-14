@@ -17,8 +17,8 @@ public class OkHttpUtils {
     private static Dispatcher dispatcher = new Dispatcher();
 
     private static OkHttpClient mOkHttpClient = new OkHttpClient().newBuilder()
-            .connectTimeout(5, TimeUnit.SECONDS)// 设置连接超时时间
-            .readTimeout(3, TimeUnit.SECONDS)// 设置读取超时时间
+            .connectTimeout(10, TimeUnit.SECONDS)// 设置连接超时时间
+            .readTimeout(5, TimeUnit.SECONDS)// 设置读取超时时间
             .dispatcher(dispatcher)
             .build();
 
@@ -44,14 +44,13 @@ public class OkHttpUtils {
                 .Builder()
                 .url(url)
                 .build();
-        Call call = mOkHttpClient.newCall(request);
-        return call;
+        return mOkHttpClient.newCall(request);
     }
 
     public String getUseablePort() {
         String ip;
         try {
-            Call call = getExecuteCall(PORT1 + "/common/security/check1.jsp");
+            Call call = getExecuteCall(PORT1 + "/common/security/login.jsp");
             Response resp = call.execute();
             if (resp.isSuccessful()) {
                 ip = PORT1;
@@ -59,11 +58,12 @@ public class OkHttpUtils {
                 resp.close();
                 return ip;
             } else {
-                call = getExecuteCall(PORT1 + "/common/security/check1.jsp");
+                resp.close();
+                call = getExecuteCall(PORT2 + "/common/security/login.jsp");
                 try {
                     resp = call.execute();
                     if (resp.isSuccessful()) {
-                        ip = PORT1;
+                        ip = PORT2;
                         call.cancel();
                         resp.close();
                         return ip;
@@ -79,7 +79,8 @@ public class OkHttpUtils {
                 }
             }
         } catch (IOException e1) {
-            Call call = getExecuteCall(PORT2 + "/common/security/check1.jsp");
+            e1.printStackTrace();
+            Call call = getExecuteCall(PORT2 + "/common/security/login.jsp");
             try {
                 Response resp = call.execute();
                 if (resp.isSuccessful()) {
@@ -108,9 +109,9 @@ public class OkHttpUtils {
         return mOkHttpClient.newCall(mRequest);
     }
 
-    public Map<String, String> login(String number, String password) {
+    public Map<String, String> login(String number, String password, String port) {
         Map<String, String> map = new HashMap<>();
-        Map<String, String> loginMap = new LoginAction().login(number, password);
+        Map<String, String> loginMap = new LoginAction().login(number, password, port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             System.out.println(TimeUtils.getTime() + " Login失败：" + loginMap.get("success"));
@@ -126,11 +127,13 @@ public class OkHttpUtils {
     public String getSession(String url) {
         String s;
         Call call = getExecuteCall(url);
+        Response resp = null;
         try {
-            Response resp = call.execute();
+            resp = call.execute();
             if (resp.isSuccessful()) {
                 Response data = resp;
                 Headers headers = data.headers();
+                System.out.println(headers.toString());
                 List<String> cookies = headers.values("Set-Cookie");
                 String session = cookies.get(0);
                 s = session.substring(0, session.indexOf(";"));
@@ -141,10 +144,21 @@ public class OkHttpUtils {
             call.cancel();
             resp.close();
         } catch (IOException e1) {
+            if (resp != null)
+                resp.close();
             s = Constants.STRING_ERROR;
             System.out.println(TimeUtils.getTime() + " 连接超时，获取seeionid失败！");
         }
+        System.out.println(s);
         return s;
+    }
+
+    public String getSession(Response resp) {
+        Response data = resp;
+        Headers headers = data.headers();
+        List<String> cookies = headers.values("Set-Cookie");
+        String session = cookies.get(0);
+        return session.substring(0, session.indexOf(";"));
     }
 
 }

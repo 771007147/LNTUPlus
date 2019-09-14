@@ -46,6 +46,7 @@ public class TableAction {
         } else {
             tableUrl = port + mTableUrl + mStuID + "&year=" + mYear + "&term=" + mTerm;
         }
+//        System.out.println(tableUrl);
         mCall = OkHttpUtils.getInstance().getInfoCall(tableUrl, session);
         try {
             mResponse = mCall.execute();
@@ -253,9 +254,11 @@ public class TableAction {
             if (mResponse.isSuccessful()) {
                 String html = mResponse.body().string();
                 parseConstant(html);
+            }else{
+                System.out.println("getYearTerm failed");
             }
         } catch (IOException e) {
-
+            System.out.println("getYearTerm error");
         }
     }
 
@@ -263,7 +266,9 @@ public class TableAction {
         Document document = Jsoup.parse(html);
         String input = document.getElementsByTag("input").get(0).attr("onClick");
         mStuID = input.substring(input.indexOf("stuId=") + 6, input.indexOf("&year"));
+        System.out.println(mStuID);
         mYear = Integer.valueOf(input.substring(input.indexOf("year=") + 5, input.indexOf("&term")));
+        System.out.println(mYear);
         mTerm = Integer.valueOf(input.substring(input.indexOf("term=") + 5, input.indexOf("',''")));
 //        System.out.println("stuid" + mStuID + ",myear" + mYear + ",mterm" + mTerm);
         if (mStuID != null && mYear != 0 && mTerm != 0) {
@@ -308,7 +313,7 @@ public class TableAction {
         if (trs.size() > 1) {
             return true;
         }
-        return false;
+        return null;
     }
 
     private int countTable(String s) {

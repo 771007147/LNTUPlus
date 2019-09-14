@@ -39,6 +39,7 @@ public class ExamAction {
                 map.put(Constants.STRING_SUCCESS, Constants.STRING_FAILED);
             }
         } catch (IOException e1) {
+            mResponse.close();
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
         }
         mResponse.close();

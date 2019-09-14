@@ -12,6 +12,7 @@ public class Constants {
     public static final String STRING_NEW_STU = "newstu";
     public static final String STRING_QUESTIONNAIRE = "questionnaire";
     public static final String STRING_HASHCODE = "hashcode";
+    public static final String STRING_TIME = "time";
     public static final String STRING_500 = "500";
     public static final String STRING_DATA = "data";
     public static final String STRING_NAME = "name";
