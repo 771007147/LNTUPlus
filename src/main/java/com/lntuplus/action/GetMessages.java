@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class GetMessages {
+
     private String session;
     private String number;
     private String password;
@@ -49,7 +50,7 @@ public class GetMessages {
 
     private OkHttpUtils mOkHttpUtils;
 
-    public GetMessages(String number, String password) {
+    public GetMessages(String number, String password) throws Exception {
         mOkHttpUtils = OkHttpUtils.getInstance();
         this.number = number;
         this.password = password;

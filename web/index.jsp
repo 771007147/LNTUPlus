@@ -13,6 +13,11 @@
 </head>
 <body>
 
+<h1>Cet Count Down</h1>
+<form action="cet/countdown" method="get">
+    <input type="submit" style="width:80px;"/>
+</form>
+
 <h1>SpecialtyGPARank</h1>
 <form action="rank/gpa" method="post">
     <input type="text" name="number" value="1606110204">

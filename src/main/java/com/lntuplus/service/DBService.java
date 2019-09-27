@@ -5,6 +5,8 @@ import com.lntuplus.action.EverydayAction;
 import com.lntuplus.action.HelloAction;
 import com.lntuplus.model.EverydayModel;
 import com.lntuplus.model.HelloModel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,7 +18,8 @@ import java.util.Map;
 
 @Controller
 public class DBService implements InitializingBean {
-    //全局Context
+
+    private static final Logger logger = LoggerFactory.getLogger(DBService.class);
     @Autowired
     private ServletContext servletContext;
 

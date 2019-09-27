@@ -3,12 +3,15 @@ package com.lntuplus.action;
 import com.lntuplus.utils.ComBean;
 import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.TimeUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class FeedbackAction {
+
     private String success = "true";
 
     public Map<String, String> post(String number, String text, String qq) {

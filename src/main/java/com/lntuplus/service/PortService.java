@@ -1,24 +1,32 @@
 package com.lntuplus.service;
 
+import com.lntuplus.action.AsyncAction;
+import com.lntuplus.controller.LoginController;
 import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.DBSessionFactory;
 import com.lntuplus.utils.OkHttpUtils;
 import com.lntuplus.utils.TimeUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletContext;
 
 @Controller
+@EnableAsync
 public class PortService implements InitializingBean {
 
-    //全局Context
+    private static final Logger logger = LoggerFactory.getLogger(PortService.class);
+
     @Autowired
     private ServletContext servletContext;
+
 
     private String mPort;
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
@@ -28,16 +36,18 @@ public class PortService implements InitializingBean {
         getPort();
     }
 
-    @Scheduled(cron = "0/2 * * * * ?")
+    @Scheduled(cron = "0/30 * * * * ?")
     public void getPort() {
 //        SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
         mPort = mOkHttpUtils.getUseablePort();
-        if (mPort.equals(Constants.STRING_FAILED) || mPort.equals(Constants.STRING_ERROR)) {
-            System.out.println(TimeUtils.getTime() + " 获取Port失败，教务在线爆炸！");
+        if (mPort.equals(Constants.STRING_ERROR)) {
+            logger.error("获取Port失败，教务在线爆炸！");
+        } else {
+            logger.info("获取可用端口:" + mPort);
         }
-        servletContext.setAttribute("port",mPort);
-        return ;
+        servletContext.setAttribute("port", mPort);
+        return;
 //        int count = sqlSession.selectOne("PortMapper.selectCount");
 //        if (count == 0) {
 //            int flag = sqlSession.insert("PortMapper.insert", mPort);

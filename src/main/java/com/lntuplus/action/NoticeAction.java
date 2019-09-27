@@ -7,6 +7,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import java.util.Map;
 
 public class NoticeAction {
 
+    private static final Logger logger = LoggerFactory.getLogger(NoticeAction.class);
     private static String mNoticeUrl = "http://jwzx.lntu.edu.cn";
 //    private static String mNoticeUrl = "http://202.199.224.121:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?&fid=5100&curid=5100&curformat=c&cursort=c&fmodulecode=5100&modulecode=5100&messagefid=5100&pageformat=pagesplite&oderitem=&seq=&topage=";
 //    private static String mItemUrl = "http://202.199.224.121:8090/lntu/";

@@ -10,6 +10,9 @@ import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
 import com.lntuplus.utils.TimeUtils;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
@@ -27,6 +30,7 @@ import java.util.concurrent.Future;
 @EnableAsync
 public class LoginController implements ILoginController {
 
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
 
     @Autowired
@@ -44,9 +48,9 @@ public class LoginController implements ILoginController {
         Gson gson = GsonUtils.getInstance();
         String number = req.getParameter("number");
         String password = req.getParameter("password");
-        System.out.println("学号：" + number + "登录中...");
+        logger.info(number + " 登录中...");
         String port = (String) servletContext.getAttribute("port");
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password, port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             return gson.toJson(map);
@@ -64,15 +68,15 @@ public class LoginController implements ILoginController {
                 break;
             }
             Thread.sleep(500);
-            if((System.currentTimeMillis()-start)/1000>10){
-                System.out.println("轮询等待多线程返回超时！");
+            if ((System.currentTimeMillis() - start) / 1000 > 10) {
+                logger.error("轮询等待多线程返回超时！");
                 map.put(Constants.STRING_SUCCESS, Constants.STRING_TIME);
                 return map;
             }
         }
         Map<String, Object> stuInfoMap = stuInfoFuture.get();
         if (!stuInfoMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
-            System.out.println(TimeUtils.getTime() + " getStuInfo失败：" + stuInfoMap.get(Constants.STRING_SUCCESS));
+            logger.debug("getStuInfo失败：" + stuInfoMap.get(Constants.STRING_SUCCESS));
             map.put(Constants.STRING_SUCCESS, stuInfoMap.get(Constants.STRING_SUCCESS));
             return map;
         }
@@ -82,8 +86,7 @@ public class LoginController implements ILoginController {
 
         Map<String, Object> scoreMap = scoreFuture.get();
         if (!scoreMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
-            System.out.println(TimeUtils.getTime() + " scoreMap：" + stuInfoMap.get(Constants.STRING_SUCCESS));
-
+            logger.debug("scoreMap：" + stuInfoMap.get(Constants.STRING_SUCCESS));
             map.put(Constants.STRING_SUCCESS, scoreMap.get(Constants.STRING_SUCCESS));
             return map;
         }
@@ -94,8 +97,7 @@ public class LoginController implements ILoginController {
 
         Map<String, Object> examMap = examFuture.get();
         if (!examMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
-            System.out.println(TimeUtils.getTime() + " examMap：" + stuInfoMap.get(Constants.STRING_SUCCESS));
-
+            logger.debug("examMap：" + stuInfoMap.get(Constants.STRING_SUCCESS));
             map.put(Constants.STRING_SUCCESS, examMap.get(Constants.STRING_SUCCESS));
             return map;
         }
@@ -105,15 +107,13 @@ public class LoginController implements ILoginController {
         Map<String, Object> tableMap = tableFuture.get();
         if (!tableMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, tableMap.get(Constants.STRING_SUCCESS));
-            System.out.println(TimeUtils.getTime() + " tableMap：" + tableMap.get(Constants.STRING_SUCCESS));
-
+            logger.debug("tableMap：" + tableMap.get(Constants.STRING_SUCCESS));
             return map;
         }
         List<List<List<TableModel>>> tableData = (List<List<List<TableModel>>>) tableMap.get(Constants.STRING_DATA);
         map.put(Constants.STRING_TABLE, tableData);
 ////        reflectStuInfo(stuInfoData);
-
-        System.out.println("登陆成功！学号：" + number);
+        logger.info("登陆成功！学号：" + number);
         return map;
     }
 

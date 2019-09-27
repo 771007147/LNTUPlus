@@ -6,6 +6,7 @@ import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
 import com.lntuplus.utils.TimeUtils;
+import com.mysql.cj.util.TimeUtil;
 import com.sun.tools.internal.jxc.ap.Const;
 import okhttp3.Call;
 import okhttp3.FormBody;
@@ -23,10 +24,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 @Controller
 @RequestMapping(value = "/cet")
@@ -41,6 +44,19 @@ public class CETController {
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
     private Call mCall;
     private Response mResponse;
+
+    @ResponseBody
+    @RequestMapping(value = "/countdown")
+    public Object countDown() {
+        Map<String, Object> map = new HashMap<>();
+        LocalDate cetDate = LocalDate.of(2019, Month.DECEMBER, 14);
+        String cet = TimeUtils.toStringDate(new Date(119, 11, 14));
+        LocalDate now = LocalDate.now();
+        long daysCountDown = ChronoUnit.DAYS.between(now, cetDate);
+        map.put("cetCountDown", daysCountDown);
+        map.put("cetDate", cet);
+        return map;
+    }
 
     @ResponseBody
     @RequestMapping(value = "/get")

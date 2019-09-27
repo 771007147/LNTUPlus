@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public class RankAction {
+
+
     private SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
     private SqlSession sqlSession = sqlSessionFactory.openSession();
 

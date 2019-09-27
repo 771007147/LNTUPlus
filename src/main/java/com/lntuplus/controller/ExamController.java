@@ -7,6 +7,8 @@ import com.lntuplus.model.ExamModel;
 import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,7 @@ import java.util.Map;
 @RequestMapping(value = "/exam")
 public class ExamController {
 
-    //全局Context
+    private static final Logger logger = LoggerFactory.getLogger(ExamController.class);
     @Autowired
     private ServletContext servletContext;
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
@@ -34,7 +36,7 @@ public class ExamController {
     public Object get(HttpServletRequest req) {
         String number = req.getParameter("number");
         String password = req.getParameter("password");
-        System.out.println(number + " 开始获取考试...");
+        logger.info(number + " 开始获取考试...");
         Map<String, Object> map = new HashMap<>();
         Gson gson = GsonUtils.getInstance();
         String port = (String) servletContext.getAttribute("port");
@@ -42,22 +44,21 @@ public class ExamController {
         Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
-            System.out.println(number + " 登录失败！");
+            logger.error(number + " 登录失败！");
             return gson.toJson(map);
         }
-//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         Map<String, Object> examMap = new ExamAction().get(port, session, number);
         if (!examMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, examMap.get(Constants.STRING_SUCCESS));
-            System.out.println(number + " 获取考试失败！");
+            logger.error(number + " 获取考试失败！");
             return map;
         }
         List<ExamModel> examData = (List<ExamModel>) examMap.get(Constants.STRING_DATA);
         map.put(Constants.STRING_DATA, examData);
         map.put(Constants.STRING_SUCCESS, Constants.STRING_SUCCESS);
-        System.out.println(number + " 获取考试成功！");
-//        mAsyncAction.saveExam(examData);
+        logger.info(number + " 获取考试成功！");
+        mAsyncAction.saveExam(examData);
         return map;
     }
 }

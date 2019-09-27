@@ -4,18 +4,21 @@ import com.lntuplus.model.ScoreModel;
 import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.OkHttpUtils;
 import com.lntuplus.utils.TimeUtils;
-import com.sun.tools.internal.jxc.ap.Const;
 import okhttp3.Call;
 import okhttp3.Response;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.*;
 
 public class ScoreAction {
+
+    private static final Logger logger = LoggerFactory.getLogger(ScoreAction.class);
 
     private String mScoreUrl = "/student/queryscore/queryscore.jsdo?groupId=&moduleId=2021";
     private Call mCall;
@@ -71,9 +74,8 @@ public class ScoreAction {
             if (mResponse != null)
                 mResponse.close();
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
-            System.out.println(TimeUtils.getTime() + " 获取Score失败！");
+            logger.error("获取Score失败！");
         }
-        mResponse.close();
         return map;
     }
 

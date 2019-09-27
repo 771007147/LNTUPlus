@@ -1,23 +1,37 @@
 package com.lntuplus.utils;
 
+import com.lntuplus.action.AsyncAction;
 import com.lntuplus.action.LoginAction;
+import com.lntuplus.controller.LoginController;
 import okhttp3.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 public class OkHttpUtils {
 
+    @Autowired
+    private AsyncAction mAsyncAction;
+
     private static OkHttpUtils sOkHttpUtils;
-    private static final String PORT1 = "http://202.199.224.24:11180/newacademic";
-    private static final String PORT2 = "http://202.199.224.24:11081/academic";
+    private static final String PORT1 = "http://s19.natfrp.org:7729/newacademic";
+    private static final String PORT2 = "http://202.199.224.24:11182/academic";
+    private static final String PORT3 = "http://202.199.224.24:11080/newacademic";
+    private static final Logger logger = LoggerFactory.getLogger(OkHttpUtils.class);
+
     private static Dispatcher dispatcher = new Dispatcher();
 
     private static OkHttpClient mOkHttpClient = new OkHttpClient().newBuilder()
-            .connectTimeout(10, TimeUnit.SECONDS)// 设置连接超时时间
+            .connectTimeout(30, TimeUnit.SECONDS)// 设置连接超时时间
             .readTimeout(5, TimeUnit.SECONDS)// 设置读取超时时间
             .dispatcher(dispatcher)
             .build();
@@ -48,55 +62,37 @@ public class OkHttpUtils {
     }
 
     public String getUseablePort() {
-        String ip;
-        try {
-            Call call = getExecuteCall(PORT1 + "/common/security/login.jsp");
-            Response resp = call.execute();
-            if (resp.isSuccessful()) {
-                ip = PORT1;
-                call.cancel();
-                resp.close();
-                return ip;
-            } else {
-                resp.close();
-                call = getExecuteCall(PORT2 + "/common/security/login.jsp");
-                try {
-                    resp = call.execute();
-                    if (resp.isSuccessful()) {
-                        ip = PORT2;
-                        call.cancel();
-                        resp.close();
-                        return ip;
-                    } else {
-                        call.cancel();
-                        resp.close();
-                        return Constants.STRING_FAILED;
-                    }
-                } catch (IOException e1) {
-                    call.cancel();
-                    resp.close();
-                    throw new IOException();
-                }
+        String port;
+        Future<String> portFuture1 = getPort(PORT1);
+        Future<String> portFuture2 = getPort(PORT2);
+        Future<String> portFuture3 = getPort(PORT3);
+
+        long start = System.currentTimeMillis();
+        while (true) {
+            if (portFuture1.isDone()) {
+                port = PORT1;
+                break;
             }
-        } catch (IOException e1) {
-            e1.printStackTrace();
-            Call call = getExecuteCall(PORT2 + "/common/security/login.jsp");
+            if (portFuture2.isDone()) {
+                port = PORT2;
+                break;
+            }
+            if (portFuture3.isDone()) {
+                port = PORT3;
+                break;
+            }
             try {
-                Response resp = call.execute();
-                if (resp.isSuccessful()) {
-                    ip = PORT2;
-                    call.cancel();
-                    resp.close();
-                    return ip;
-                } else {
-                    call.cancel();
-                    resp.close();
-                    return Constants.STRING_FAILED;
-                }
-            } catch (IOException e2) {
-                return Constants.STRING_ERROR;
+                Thread.sleep(500);
+            } catch (Exception e) {
+                logger.error("Port thread sleep error！");
+            }
+            if ((System.currentTimeMillis() - start) / 1000 > 10) {
+                logger.error("Port 轮询等待多线程返回超时，暂无可用端口！");
+                port = Constants.STRING_ERROR;
+                break;
             }
         }
+        return port;
     }
 
     public Call getInfoCall(String url, String session) {
@@ -114,8 +110,7 @@ public class OkHttpUtils {
         Map<String, String> loginMap = new LoginAction().login(number, password, port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
-            System.out.println(TimeUtils.getTime() + " Login失败：" + loginMap.get("success"));
-
+            logger.debug(" Login失败：" + loginMap.get("success"));
         } else {
             map.put(Constants.STRING_SUCCESS, Constants.STRING_SUCCESS);
             map.put(Constants.STRING_SESSION, loginMap.get(Constants.STRING_SESSION));
@@ -125,6 +120,7 @@ public class OkHttpUtils {
     }
 
     public String getSession(String url) {
+        logger.debug(url);
         String s;
         Call call = getExecuteCall(url);
         Response resp = null;
@@ -133,13 +129,12 @@ public class OkHttpUtils {
             if (resp.isSuccessful()) {
                 Response data = resp;
                 Headers headers = data.headers();
-                System.out.println(headers.toString());
                 List<String> cookies = headers.values("Set-Cookie");
                 String session = cookies.get(0);
                 s = session.substring(0, session.indexOf(";"));
             } else {
                 s = Constants.STRING_FAILED;
-                System.out.println(TimeUtils.getTime() + " 获取sessionid失败！");
+                logger.error("获取sessionid失败！");
             }
             call.cancel();
             resp.close();
@@ -147,9 +142,8 @@ public class OkHttpUtils {
             if (resp != null)
                 resp.close();
             s = Constants.STRING_ERROR;
-            System.out.println(TimeUtils.getTime() + " 连接超时，获取seeionid失败！");
+            logger.error("连接超时，获取seeionid失败！");
         }
-        System.out.println(s);
         return s;
     }
 
@@ -159,6 +153,22 @@ public class OkHttpUtils {
         List<String> cookies = headers.values("Set-Cookie");
         String session = cookies.get(0);
         return session.substring(0, session.indexOf(";"));
+    }
+
+    @Async
+    public Future<String> getPort(String port) {
+        Call call = getExecuteCall(port + "/common/security/login.jsp");
+        try {
+            Response resp = call.execute();
+            if (resp.isSuccessful()) {
+                resp.close();
+                return new AsyncResult<>(port);
+            } else {
+                return new AsyncResult<>(Constants.STRING_FAILED);
+            }
+        } catch (Exception e) {
+            return new AsyncResult<>(Constants.STRING_ERROR);
+        }
     }
 
 }

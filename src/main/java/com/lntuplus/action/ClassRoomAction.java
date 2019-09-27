@@ -10,6 +10,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import java.util.Map;
 
 
 public class ClassRoomAction {
+
+    private static final Logger logger = LoggerFactory.getLogger(ClassRoomAction.class);
     private static String url = "http://202.199.224.121:11180/newacademic/manager/teachresource/schedule/export_room_schedule_detail.jsp";
     private static String[] ssBuildingNameHLD = {"eyl", "yhl", "jyl", "hldjf", "hldwlsys"};
     private static String[] ssBuildingNameFX = {"bwl", "byl", "xhl", "zhl", "zyl", "zxl", "wlsys", "zljf"};
@@ -44,16 +48,16 @@ public class ClassRoomAction {
                 Response data = roomResp;
                 classRoomModel.setSuccess("success");
                 classRoomModel.setData(parseClassRoom(data.body().string()));
-                System.out.println(TimeUtils.getTime() + " 查询空教室成功!name:" + name + ",weeks:" + weeks);
+                logger.info(" 查询空教室成功!name:" + name + ",weeks:" + weeks);
                 roomResp.close();
             } else {
                 classRoomModel.setSuccess("failed");
-                System.out.println(TimeUtils.getTime() + ":获取空教室失败！");
+                logger.error("获取空教室失败！");
             }
             roomResp.close();
         } catch (IOException e1) {
             classRoomModel.setSuccess("error");
-            System.out.println(TimeUtils.getTime() + " 连接超时，获取空教室失败！");
+            logger.error("连接超时，获取空教室失败！");
         }
         return classRoomModel;
     }

@@ -10,11 +10,15 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.*;
 
 public class ExamAction {
+
+    private static final Logger logger = LoggerFactory.getLogger(ExamAction.class);
 
     private String mExamUrl = "/student/exam/index.jsdo?groupId=&moduleId=2030";
     private int mNumber;

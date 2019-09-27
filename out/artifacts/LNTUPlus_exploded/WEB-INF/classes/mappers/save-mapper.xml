@@ -9,11 +9,11 @@
      -->
 
     <select id="stuinfoCount" parameterType="com.lntuplus.model.StuInfoModel" resultType="int">
-        select count(*) from stuInfo where number = #{number}
+        select count(*) from stuinfo where number = #{number}
     </select>
 
     <select id="stuinfoInsert" parameterType="com.lntuplus.model.StuInfoModel">
-        insert ignore into stuInfo values (
+        insert ignore into stuinfo values (
         #{number},
         #{password},
         #{nationality},

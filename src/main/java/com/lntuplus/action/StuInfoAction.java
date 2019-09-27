@@ -9,6 +9,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -16,6 +18,7 @@ import java.util.Map;
 
 public class StuInfoAction {
 
+    private static final Logger logger = LoggerFactory.getLogger(StuInfoAction.class);
     private String mStuInfoUrl = "/student/studentinfo/studentinfo.jsdo?groupId=&moduleId=2060";
     private String mNewStuUrl = "/eva/index/resultlist.jsdo?groupId=&moduleId=506";
     private OkHttpUtils mOkHttpUtils;

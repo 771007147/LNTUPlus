@@ -11,6 +11,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Evaluate {
+
+    private static final Logger logger = LoggerFactory.getLogger(Evaluate.class);
     private String mSession;
     private String evaluateUrl = "/eva/index/resultlist.jsdo?groupId=&moduleId=506";
     private String evaluateGetUrl = "/eva/index";

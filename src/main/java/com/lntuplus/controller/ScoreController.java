@@ -6,6 +6,8 @@ import com.lntuplus.action.ScoreAction;
 import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +23,7 @@ import java.util.Map;
 @RequestMapping(value = "/score")
 public class ScoreController {
 
-    //全局Context
+    private static final Logger logger = LoggerFactory.getLogger(ScoreController.class);
     @Autowired
     private ServletContext servletContext;
     private OkHttpUtils mOkHttpUtils = OkHttpUtils.getInstance();
@@ -34,30 +36,27 @@ public class ScoreController {
         String number = req.getParameter("number");
         String password = req.getParameter("password");
         Map<String, Object> map = new HashMap<>();
-
-        System.out.println(number + " 开始获取成绩...");
+        logger.info(number + " 开始获取成绩...");
         String port = (String) servletContext.getAttribute("port");
-
         Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
-            System.out.println(number + " 登录失败！");
+            logger.error(number + " 登录失败！");
             return map;
         }
-//        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
         Map<String, Object> scoreMap = new ScoreAction().get(port, session, number);
         if (!scoreMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, scoreMap.get(Constants.STRING_SUCCESS));
-            System.out.println(number + " 获取成绩失败！");
+            logger.error(number + " 获取成绩失败！");
             return map;
         }
         List<Map<String, Object>> scoreData = (List<Map<String, Object>>) scoreMap.get(Constants.STRING_DATA);
         map.put(Constants.STRING_DATA, scoreData);
         map.put(Constants.STRING_GPA, scoreMap.get(Constants.STRING_GPA));
         map.put(Constants.STRING_SUCCESS, Constants.STRING_SUCCESS);
-        System.out.println(number + " 获取成绩成功！");
-//        mAsyncAction.saveScore(scoreData,number, (double) scoreMap.get(Constants.STRING_GPA));
+        logger.info(number + " 获取成绩成功！");
+        mAsyncAction.saveScore(scoreData, number, (double) scoreMap.get(Constants.STRING_GPA));
         return map;
     }
 }

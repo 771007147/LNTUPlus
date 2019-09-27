@@ -12,6 +12,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletContext;
@@ -21,6 +23,7 @@ import java.util.Map;
 
 public class LoginAction {
 
+    private static final Logger logger = LoggerFactory.getLogger(LoginAction.class);
     private OkHttpUtils mOkHttpUtils;
     private String mPort;
     private String mSession;
@@ -32,7 +35,7 @@ public class LoginAction {
     @Autowired
     private ServletContext servletContext;
 
-    public Map<String, String> login(String number, String password,String port) {
+    public Map<String, String> login(String number, String password, String port) {
         Map<String, String> map = new HashMap<>();
         mOkHttpUtils = OkHttpUtils.getInstance();
         mPort = port;
@@ -60,7 +63,6 @@ public class LoginAction {
         map.put(Constants.STRING_PORT, mPort);
         return map;
     }
-
 
 
 //	private void saveData(Map data) {
@@ -268,9 +270,9 @@ public class LoginAction {
                 return data;
             }
         } catch (IOException e) {
-            resp.close();
-            e.printStackTrace();
-            System.out.println(TimeUtils.getTime() + " Post登录失败！");
+            if (resp != null)
+                resp.close();
+            logger.error("Post登录失败！");
         }
         return Constants.STRING_FAILED;
     }

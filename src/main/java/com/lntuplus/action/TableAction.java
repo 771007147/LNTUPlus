@@ -11,12 +11,14 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.*;
 
 public class TableAction {
-    ///student/currcourse/currcourse.jsdo?groupId=&moduleId=2000
+    private static final Logger logger = LoggerFactory.getLogger(TableAction.class);
     private String mYearTermUrl = "/student/currcourse/currcourse.jsdo?groupId=&moduleId=2000";
     ///student/currcourse/currcourse.jsdo?year=38&term=2
     private String mTestUrl = "/student/currcourse/currcourse.jsdo?year=";
@@ -35,6 +37,7 @@ public class TableAction {
     public Map<String, Object> get(String port, String session) {
         getYearTerm(port + mYearTermUrl, session);
         getNewYearTerm();
+//        System.out.println(newYear+" "+newTerm);
         Boolean next = getNewTable(port + mTestUrl + newYear + "&term=" + newTerm, session);
         if (next == null) {
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
@@ -46,7 +49,9 @@ public class TableAction {
         } else {
             tableUrl = port + mTableUrl + mStuID + "&year=" + mYear + "&term=" + mTerm;
         }
-//        System.out.println(tableUrl);
+//        String tableUrl;
+//        tableUrl = port + mTableUrl + mStuID + "&year=" + mYear + "&term=" + mTerm;
+
         mCall = OkHttpUtils.getInstance().getInfoCall(tableUrl, session);
         try {
             mResponse = mCall.execute();
@@ -56,12 +61,11 @@ public class TableAction {
                 map.put(Constants.STRING_SUCCESS, Constants.STRING_SUCCESS);
                 map.put(Constants.STRING_DATA, tableList);
                 mResponse.close();
-
                 return map;
             }
         } catch (IOException e) {
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
-            System.out.println(TimeUtils.getTime() + " 获取Table失败！");
+            logger.error("获取Table失败！");
             mResponse.close();
             return map;
         }
@@ -255,10 +259,10 @@ public class TableAction {
                 String html = mResponse.body().string();
                 parseConstant(html);
             }else{
-                System.out.println("getYearTerm failed");
+                logger.error("getYearTerm failed");
             }
         } catch (IOException e) {
-            System.out.println("getYearTerm error");
+            logger.error("getYearTerm error");
         }
     }
 
@@ -266,9 +270,7 @@ public class TableAction {
         Document document = Jsoup.parse(html);
         String input = document.getElementsByTag("input").get(0).attr("onClick");
         mStuID = input.substring(input.indexOf("stuId=") + 6, input.indexOf("&year"));
-        System.out.println(mStuID);
         mYear = Integer.valueOf(input.substring(input.indexOf("year=") + 5, input.indexOf("&term")));
-        System.out.println(mYear);
         mTerm = Integer.valueOf(input.substring(input.indexOf("term=") + 5, input.indexOf("',''")));
 //        System.out.println("stuid" + mStuID + ",myear" + mYear + ",mterm" + mTerm);
         if (mStuID != null && mYear != 0 && mTerm != 0) {
@@ -293,13 +295,13 @@ public class TableAction {
             mResponse = mCall.execute();
             if (mResponse.isSuccessful()) {
                 String html = mResponse.body().string();
+                logger.debug(html);
                 Boolean next = checkNewTable(html);
                 mResponse.close();
-
                 return next;
             }
         } catch (IOException e) {
-            System.out.println(TimeUtils.getTime() + " getNewTable失败！");
+            logger.error("getNewTable失败！");
             return null;
         }
         mResponse.close();
@@ -313,7 +315,7 @@ public class TableAction {
         if (trs.size() > 1) {
             return true;
         }
-        return null;
+        return false;
     }
 
     private int countTable(String s) {

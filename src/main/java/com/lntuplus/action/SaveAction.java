@@ -8,6 +8,8 @@ import com.lntuplus.utils.Constants;
 import com.lntuplus.utils.DBSessionFactory;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,8 @@ import java.util.Map;
 @EnableAsync
 public class SaveAction {
 
+    private static final Logger logger = LoggerFactory.getLogger(SaveAction.class);
+
     @Async
     public void saveStuInfo(StuInfoModel stuInfoData) {
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
@@ -29,9 +33,9 @@ public class SaveAction {
         int flag = sqlSession.insert("SaveMapper.stuinfoInsert", stuInfoData);
         sqlSession.commit();
         if (flag > 0) {
-            System.out.println("保存学生信息成功！学号：" + stuInfoData.getNumber());
+            logger.info(stuInfoData.getNumber() + " 保存学生信息成功");
         } else {
-            System.out.println("学生信息已存在！");
+            logger.info("学生信息已存在");
         }
         sqlSession.close();
     }
@@ -39,7 +43,7 @@ public class SaveAction {
     @Async
     public void saveScore(List<Map<String, Object>> scoreData) {
         if (scoreData.size() == 0) {
-            System.out.println("没有成绩信息，无需保存！");
+            logger.info("没有成绩信息，无需保存");
             return;
         }
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
@@ -60,15 +64,15 @@ public class SaveAction {
         scoreModel.setNumber(number);
         int countSaved = sqlSession.selectOne("SaveMapper.scoreCount", scoreModel);
         if (count == countSaved) {
-            System.out.println("成绩无需更新！");
+            logger.info("成绩无需更新");
             return;
         }
         int flag = sqlSession.insert("SaveMapper.scoreForeach", data);
         sqlSession.commit();
         if (flag != count - countSaved) {
-            System.out.println("保存成绩失败！");
+            logger.info("保存成绩失败");
         } else {
-            System.out.println("更新" + flag + "条成绩成功！");
+            logger.info("更新" + flag + "条成绩成功");
         }
         sqlSession.close();
     }
@@ -76,7 +80,7 @@ public class SaveAction {
     @Async
     public void saveExam(List<ExamModel> examData) {
         if (examData.size() == 0) {
-            System.out.println("没有考试信息，无需保存！");
+            logger.info("没有考试信息，无需保存");
             return;
         }
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
@@ -84,9 +88,9 @@ public class SaveAction {
         int flag = sqlSession.insert("SaveMapper.examForeach", examData);
         sqlSession.commit();
         if (flag == 0) {
-            System.out.println("考试信息无需更新！");
+            logger.info("考试信息无需更新");
         } else {
-            System.out.println("更新" + flag + "条考试成功！");
+            logger.info("更新" + flag + "条考试成功");
         }
         sqlSession.close();
     }
@@ -102,11 +106,11 @@ public class SaveAction {
         int flag = sqlSession.insert("SaveMapper.gpaInsert", gpaModel);
         sqlSession.commit();
         if (flag == 1) {
-            System.out.println("更新GPA成功！GPA：" + gpa);
+            logger.info("更新GPA成功！GPA：" + gpa);
         } else if (flag == 2) {
-            System.out.println("插入、覆盖GPA成功！GPA：" + gpa);
+            logger.info("插入、覆盖GPA成功！GPA：" + gpa);
         } else {
-            System.out.println("GPA无需更新!");
+            logger.info("GPA无需更新");
         }
         sqlSession.close();
     }

@@ -24,6 +24,11 @@ public class TimeUtils {
         return df.format(now);
     }
 
+    public static String toStringDate(Date date) {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        return df.format(date);
+    }
+
     public static Date toDate(String s) {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         Date date = new Date();
