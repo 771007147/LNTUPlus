@@ -8,18 +8,19 @@
        resultType：sql语句查询结果集的封装类型,tb_user即为数据库中的表
      -->
     <select id="isExist" parameterType="com.lntuplus.model.SignModel" resultType="int">
-      select count(*) from signed where number = #{number} and day = #{day} and no = #{no}
+      select count(*) from signed where number = #{number} and day = #{date} and no = #{index}
    </select>
 
     <insert id="insert" parameterType="com.lntuplus.model.SignModel">
-        insert ignore into signed values (#{number}, #{name}, #{iClass}, #{day}, #{no}, #{signTime})
+        insert ignore into signed values (#{number}, #{name}, #{iClass}, #{date}, #{index}, #{signTime})
     </insert>
 
     <select id="selectSigned" parameterType="com.lntuplus.model.SignModel" resultType="com.lntuplus.model.SignModel">
-        select * from signed where iClass = #{iClass} and day = #{day} and no = #{no} order by number
+        select * from signed where iClass = #{iClass} and day = #{date} and no = #{index} order by number
     </select>
 
     <select id="selectClass" parameterType="com.lntuplus.model.SignModel" resultType="com.lntuplus.model.SignModel">
         select * from student where iClass = #{iClass} order by number
     </select>
+
 </mapper>

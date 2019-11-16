@@ -23,9 +23,10 @@ public class OkHttpUtils {
     private AsyncAction mAsyncAction;
 
     private static OkHttpUtils sOkHttpUtils;
-    private static final String PORT1 = "http://s19.natfrp.org:7729/newacademic";
-    private static final String PORT2 = "http://202.199.224.24:11182/academic";
-    private static final String PORT3 = "http://202.199.224.24:11080/newacademic";
+    private static final String PORT1 = "http://s2.natfrp.com:7792/academic";
+    private static final String PORT2 = "http://s2.natfrp.com:7790/newacademic";
+    private static final String PORT3 = "http://202.199.224.24:11182/academic";
+    private static final String PORT4 = "http://202.199.224.24:11080/newacademic";
     private static final Logger logger = LoggerFactory.getLogger(OkHttpUtils.class);
 
     private static Dispatcher dispatcher = new Dispatcher();
@@ -66,6 +67,8 @@ public class OkHttpUtils {
         Future<String> portFuture1 = getPort(PORT1);
         Future<String> portFuture2 = getPort(PORT2);
         Future<String> portFuture3 = getPort(PORT3);
+        Future<String> portFuture4 = getPort(PORT4);
+
 
         long start = System.currentTimeMillis();
         while (true) {
@@ -79,6 +82,10 @@ public class OkHttpUtils {
             }
             if (portFuture3.isDone()) {
                 port = PORT3;
+                break;
+            }
+            if (portFuture4.isDone()) {
+                port = PORT4;
                 break;
             }
             try {

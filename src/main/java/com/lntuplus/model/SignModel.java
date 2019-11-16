@@ -4,19 +4,17 @@ public class SignModel {
     private int number;
     private String name;
     private String iClass;
-    private String day;
-    private int no;
+    private String date;
+    private int index;
     private String signTime;
 
     public SignModel() {
     }
 
-    ;
-
-    public SignModel(int number, String day, int no) {
+    public SignModel(int number, String date, int index) {
         this.number = number;
-        this.day = day;
-        this.no = no;
+        this.date = date;
+        this.index = index;
     }
 
     public int getNumber() {
@@ -43,20 +41,20 @@ public class SignModel {
         this.iClass = iClass;
     }
 
-    public String getDay() {
-        return day;
+    public String getDate() {
+        return date;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public int getNo() {
-        return no;
+    public int getIndex() {
+        return index;
     }
 
-    public void setNo(int no) {
-        this.no = no;
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public String getSignTime() {

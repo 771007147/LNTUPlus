@@ -37,7 +37,6 @@ public class TableAction {
     public Map<String, Object> get(String port, String session) {
         getYearTerm(port + mYearTermUrl, session);
         getNewYearTerm();
-//        System.out.println(newYear+" "+newTerm);
         Boolean next = getNewTable(port + mTestUrl + newYear + "&term=" + newTerm, session);
         if (next == null) {
             map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
@@ -49,9 +48,6 @@ public class TableAction {
         } else {
             tableUrl = port + mTableUrl + mStuID + "&year=" + mYear + "&term=" + mTerm;
         }
-//        String tableUrl;
-//        tableUrl = port + mTableUrl + mStuID + "&year=" + mYear + "&term=" + mTerm;
-
         mCall = OkHttpUtils.getInstance().getInfoCall(tableUrl, session);
         try {
             mResponse = mCall.execute();
@@ -235,6 +231,84 @@ public class TableAction {
                 item = item.substring(item.indexOf(" ") + 1);
                 tableModel.setTeacher(s);
                 if (count == 4) {
+                    tableModel.setAddress(item);
+                    oneList.add(tableModel);
+                    rowList.add(oneList);
+                    continue;
+                } else {
+                    s = item.substring(0, item.indexOf(" "));
+                    item = item.substring(item.indexOf(" ") + 1);
+                    tableModel.setAddress(s);
+                    oneList.add(tableModel);
+                }
+                tableModel = new TableModel();
+                s = item.substring(0, item.indexOf(" "));
+                item = item.substring(item.indexOf(" ") + 1);
+                tableModel.setCourse(s);
+                s = item.substring(0, item.indexOf(" "));
+                item = item.substring(item.indexOf(" ") + 1);
+                tableModel.setTime(s);
+                if (!s.contains("-")) {
+                    tableModel.setStart(s);
+                    tableModel.setEnd(s);
+                    tableModel.setSingleDouble("0");
+                } else if (s.contains("单")) {
+                    tableModel.setStart(s.substring(0, s.indexOf("-")));
+                    tableModel.setEnd(s.substring(s.indexOf("-") + 1, s.length() - 1));
+                    tableModel.setSingleDouble("1");
+                } else if (s.contains("双")) {
+                    tableModel.setStart(s.substring(0, s.indexOf("-")));
+                    tableModel.setEnd(s.substring(s.indexOf("-") + 1, s.length() - 1));
+                    tableModel.setSingleDouble("2");
+                } else {
+                    tableModel.setStart(s.substring(0, s.indexOf("-")));
+                    tableModel.setEnd(s.substring(s.indexOf("-") + 1));
+                    tableModel.setSingleDouble("0");
+                }
+
+                s = item.substring(0, item.indexOf(" "));
+                item = item.substring(item.indexOf(" ") + 1);
+                tableModel.setTeacher(s);
+                if (count == 5) {
+                    tableModel.setAddress(item);
+                    oneList.add(tableModel);
+                    rowList.add(oneList);
+                    continue;
+                } else {
+                    s = item.substring(0, item.indexOf(" "));
+                    item = item.substring(item.indexOf(" ") + 1);
+                    tableModel.setAddress(s);
+                    oneList.add(tableModel);
+                }
+                tableModel = new TableModel();
+                s = item.substring(0, item.indexOf(" "));
+                item = item.substring(item.indexOf(" ") + 1);
+                tableModel.setCourse(s);
+                s = item.substring(0, item.indexOf(" "));
+                item = item.substring(item.indexOf(" ") + 1);
+                tableModel.setTime(s);
+                if (!s.contains("-")) {
+                    tableModel.setStart(s);
+                    tableModel.setEnd(s);
+                    tableModel.setSingleDouble("0");
+                } else if (s.contains("单")) {
+                    tableModel.setStart(s.substring(0, s.indexOf("-")));
+                    tableModel.setEnd(s.substring(s.indexOf("-") + 1, s.length() - 1));
+                    tableModel.setSingleDouble("1");
+                } else if (s.contains("双")) {
+                    tableModel.setStart(s.substring(0, s.indexOf("-")));
+                    tableModel.setEnd(s.substring(s.indexOf("-") + 1, s.length() - 1));
+                    tableModel.setSingleDouble("2");
+                } else {
+                    tableModel.setStart(s.substring(0, s.indexOf("-")));
+                    tableModel.setEnd(s.substring(s.indexOf("-") + 1));
+                    tableModel.setSingleDouble("0");
+                }
+
+                s = item.substring(0, item.indexOf(" "));
+                item = item.substring(item.indexOf(" ") + 1);
+                tableModel.setTeacher(s);
+                if (count == 6) {
                     tableModel.setAddress(item);
                     oneList.add(tableModel);
                     rowList.add(oneList);

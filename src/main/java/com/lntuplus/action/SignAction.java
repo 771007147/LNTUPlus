@@ -43,8 +43,8 @@ public class SignAction {
             sqlSession.close();
             return map;
         }
-        signModel.setDay(TimeUtils.getDate());
-        signModel.setNo(signCourseNo);
+        signModel.setDate(TimeUtils.getDate());
+        signModel.setIndex(signCourseNo);
         signModel.setSignTime(TimeUtils.getTime());
         signModel.setName(name);
         signModel.setiClass(iClass);

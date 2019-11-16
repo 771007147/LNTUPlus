@@ -6,117 +6,34 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="759dc6db-6f36-4e5f-9c8f-581358465c47" name="Default Changelist" comment="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LNTUPlus_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/lntuplus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/lntuplus.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_2_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_12_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_2_60.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_3_50.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_2_60.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_50.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_28.xml" afterDir="false" />
+    <list default="true" id="759dc6db-6f36-4e5f-9c8f-581358465c47" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/LNTUPlus_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignGetModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/m/sign/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8641894d-6edb-4579-872b-a82146479227.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8641894d-6edb-4579-872b-a82146479227.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LNTUPlus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LNTUPlus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/AsyncAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/AsyncAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ClassRoomAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ClassRoomAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/Evaluate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/Evaluate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ExamAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ExamAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/FeedbackAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/FeedbackAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/GetMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/GetMessages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/LoginAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/LoginAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/NoticeAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/NoticeAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/RankAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/RankAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/SaveAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/SaveAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ScoreAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/ScoreAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/SignAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/SignAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/StuInfoAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/StuInfoAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/TableAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/action/TableAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/CETController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/CETController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/CetModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/CetModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ClassRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ClassRoomController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/EnrollModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/EnrollModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ExamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/NoticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/NoticeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ScoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/ScoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/TableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/controller/TableController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/DBService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/DBService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/NoticeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/PortService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/service/PortService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/OkHttpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/OkHttpUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/TimeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/com/lntuplus/utils/TimeUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/save-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/classes/mappers/save-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/kotlin-stdlib-1.2.60.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/kotlin-stdlib-common-1.2.60.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/log4j-api-2.11.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/log4j-core-2.11.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/okio-2.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/WEB-INF/lib/slf4j-api-1.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LNTUPlus_exploded/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/lntuplus/lntuplus.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/lntuplus/lntuplus.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/AsyncAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ClassRoomAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Evaluate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/Evaluate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ExamAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/FeedbackAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/GetMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/LoginAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/NoticeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/RankAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/RankAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SaveAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/ScoreAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/SignAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/StuInfoAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/action/TableAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/CETController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/CETController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ClassRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/NoticeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/ScoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/TableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/NoticeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/service/PortService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/EverydayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/controller/SignController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/model/SignModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/OkHttpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lntuplus/utils/TimeUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/save-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/AsyncAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/AsyncAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ClassRoomAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ClassRoomAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/Evaluate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/Evaluate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ExamAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ExamAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/FeedbackAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/FeedbackAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/GetMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/GetMessages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/LoginAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/LoginAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/sign-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/NoticeAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/NoticeAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/RankAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/RankAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/SaveAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/SaveAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ScoreAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/ScoreAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/SignAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/SignAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/StuInfoAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/StuInfoAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/action/TableAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/action/TableAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/CETController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/CETController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/CetModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/CetModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ClassRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ClassRoomController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/EnrollModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/EnrollModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ExamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/NoticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/NoticeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ScoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/ScoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/TableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/TableController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/service/DBService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/service/DBService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/service/NoticeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/service/PortService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/service/PortService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/EverydayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/EverydayController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/SignController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/controller/SignController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/model/SignModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/model/SignModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/OkHttpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/OkHttpUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/TimeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lntuplus/utils/TimeUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/save-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/save-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/sign-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/sign-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,6 +65,7 @@
         <option value="FxmlFile" />
         <option value="spring-beans.schema" />
         <option value="Tag Library Descriptor" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -188,6 +106,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -195,28 +114,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553935499698" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/m/sign" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33448276" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/WEB-INF/views" />
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus/utils" />
-      <recent name="$PROJECT_DIR$/web/views" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/web/m/sign" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/js" />
+      <recent name="$PROJECT_DIR$/web/dist" />
+      <recent name="$PROJECT_DIR$/web/dist/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/html/teleSign" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/lntuplus" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -233,7 +153,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
         <artifact name="lntuplus">
           <settings>
@@ -418,6 +338,19 @@
       <workItem from="1569053403196" duration="13000" />
       <workItem from="1569053447698" duration="74000" />
       <workItem from="1569053568873" duration="934000" />
+      <workItem from="1569561166719" duration="578000" />
+      <workItem from="1569561779277" duration="79000" />
+      <workItem from="1571018091917" duration="1077000" />
+      <workItem from="1571116657132" duration="2410000" />
+      <workItem from="1571556986151" duration="2861000" />
+      <workItem from="1571743929658" duration="4845000" />
+      <workItem from="1571833336932" duration="2850000" />
+      <workItem from="1571921946784" duration="1860000" />
+      <workItem from="1573473176640" duration="3404000" />
+      <workItem from="1573733302046" duration="9426000" />
+      <workItem from="1573888641918" duration="34000" />
+      <workItem from="1573888713406" duration="14539000" />
+      <workItem from="1573915038719" duration="2897000" />
     </task>
     <task id="LOCAL-00001" summary="feat: first commit.&#10;&#10;Use Mybatis control DB.&#10;&#10;GaoRuiLian.">
       <created>1550675009105</created>
@@ -468,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561168883401</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Web port update: Change LNTU server port&#10;&#10;1. Change server port&#10;2. Using log4j to output log&#10;&#10;GaoRuiLian.">
+      <created>1569561430698</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569561430698</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -502,7 +442,8 @@
     <MESSAGE value="Messages:&#10;&#10;Asynchronous save information.&#10;&#10;GaoRuiLian." />
     <MESSAGE value="Messages:&#10;&#10;RankController Update&#10;&#10;GaoRuiLian." />
     <MESSAGE value="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian." />
-    <option name="LAST_COMMIT_MESSAGE" value="Messages:&#10;&#10;Maven Update&#10;&#10;GaoRuiLian." />
+    <MESSAGE value="Web port update: Change LNTU server port&#10;&#10;1. Change server port&#10;2. Using log4j to output log&#10;&#10;GaoRuiLian." />
+    <option name="LAST_COMMIT_MESSAGE" value="Web port update: Change LNTU server port&#10;&#10;1. Change server port&#10;2. Using log4j to output log&#10;&#10;GaoRuiLian." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

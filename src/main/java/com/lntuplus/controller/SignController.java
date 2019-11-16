@@ -1,14 +1,15 @@
 package com.lntuplus.controller;
 
 import com.lntuplus.action.SignAction;
+import com.lntuplus.model.SignGetModel;
 import com.lntuplus.model.SignModel;
 import com.lntuplus.utils.DBSessionFactory;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,10 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/sign")
+@CrossOrigin
 public class SignController {
+
+    private static final Logger logger = LoggerFactory.getLogger(SignController.class);
 
     @ResponseBody
     @RequestMapping(value = "/sign")
@@ -34,23 +38,24 @@ public class SignController {
         return map;
     }
 
-    @RequestMapping(value = "/query")
-    public String sign() {
-        return "sign";
-    }
+//    @RequestMapping(value = "/query")
+//    public String sign() {
+//        return "sign";
+//    }
 
     @RequestMapping(value = "/get")
-    public String get(HttpServletRequest req, ModelMap model) throws UnsupportedEncodingException {
-        req.setCharacterEncoding("UTF-8");
-        String iClass = req.getParameter("iClass");
-        String day = req.getParameter("day");
-        String no = req.getParameter("no");
+    @ResponseBody
+    public Object get(SignGetModel signGetModel) {
+        String iClass = signGetModel.getiClass();
+        String date = signGetModel.getDate();
+        int index = signGetModel.getIndex();
+        Map<String, Object> signMap = new HashMap<>();
         SqlSessionFactory sqlSessionFactory = DBSessionFactory.getInstance();
         SqlSession sqlSession = sqlSessionFactory.openSession();
         SignModel signModel = new SignModel();
         signModel.setiClass(iClass);
-        signModel.setDay(day);
-        signModel.setNo(Integer.valueOf(no));
+        signModel.setDate(date);
+        signModel.setIndex(index);
         List<SignModel> list = sqlSession.selectList("SignMapper.selectSigned", signModel);
         List<SignModel> all = sqlSession.selectList("SignMapper.selectClass", signModel);
         Map<String, String> map = new HashMap<>();
@@ -63,10 +68,11 @@ public class SignController {
                 back.add(all.get(i));
             }
         }
-        model.addAttribute("list", back);
-        model.addAttribute("number", back.size());
+        signMap.put("list", back);
+        signMap.put("sum", all.size());
         System.out.println("查询签到：");
-        System.out.println("班级：" + iClass + " 日期：" + day + " 课序：" + no);
-        return "sign";
+        System.out.println("班级：" + iClass + " 日期：" + date + " 课序：" + index);
+        return signMap;
     }
+
 }

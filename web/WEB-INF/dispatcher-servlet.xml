@@ -15,6 +15,15 @@
     <!--Default servlet-->
     <mvc:default-servlet-handler/>
 
+    <!--    <mvc:interceptors>-->
+    <!--        <mvc:interceptor>-->
+    <!--            <mvc:mapping path="/**"></mvc:mapping>-->
+    <!--            <bean class="com.lntuplus.utils.ProcessInterceptor"></bean>-->
+    <!--        </mvc:interceptor>-->
+    <!--    </mvc:interceptors>-->
+
+    <!--    <mvc:resources mapping="/dist/**" location="/dist/"/>-->
+
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">

@@ -57,17 +57,16 @@ public class NoticeAction {
         Document document = Jsoup.parse(html);
         Element element = document.getElementsByClass("vsb-space school-news school-news1").get(0);
         Elements lis = element.getElementsByTag("li");
-//        System.out.println(element.toString());
         List<Map> list = new ArrayList<>();
         Map<String, Object> map;
         for (int i = 0; i < lis.size(); i++) {
             map = new HashMap<>();
             map.put("title", lis.get(i).getElementsByTag("a").get(0).getElementsByTag("em").get(0).text());
             String url = lis.get(i).getElementsByTag("a").get(0).attr("href");
-            String link = mNoticeUrl + "/" + url;
+            String link = url.substring(0, 4).equals("info") ? mNoticeUrl + "/" + url : url;
             map.put("link", link);
             map.put("time", lis.get(i).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text());
-            if (url.substring(0, 4).equals("info")) {
+            if (link.substring(0, 11).equals("http://jwzx")) {
                 Map<String, Object> page = requestPages(link);
                 if (page == null) {
                     return null;
@@ -90,7 +89,7 @@ public class NoticeAction {
                 return map;
             }
         } catch (IOException e1) {
-            System.out.println("request pages connect error");
+            logger.info("request pages connect error");
             return null;
         }
         return null;
