@@ -35,6 +35,7 @@ public class ClassRoomAction {
         String id = nameToID(name, campus);
         if (id.equals("-1")) {
             classRoomModel.setSuccess("nameError");
+            logger.error(id);
             System.out.println(TimeUtils.getTime() + " 校区名错误！");
             return classRoomModel;
         }

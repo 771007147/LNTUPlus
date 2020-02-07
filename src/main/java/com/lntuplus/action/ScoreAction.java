@@ -48,6 +48,7 @@ public class ScoreAction {
                     case Constants.STRING_FAILED:
                     case Constants.STRING_ERROR:
                         System.out.println(TimeUtils.getTime() + " 评课失败!");
+                        map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
                         break;
                     case Constants.STRING_SUCCESS:
                         map = new ScoreAction().get(mPort, mSession, number);

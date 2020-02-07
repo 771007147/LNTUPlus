@@ -1,12 +1,12 @@
 package com.lntuplus.controller;
 
-import com.google.gson.Gson;
 import com.lntuplus.action.StuInfoAction;
 import com.lntuplus.model.StuInfoModel;
 import com.lntuplus.utils.Constants;
-import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
 import com.lntuplus.utils.TimeUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +20,7 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/stuinfo")
 public class StuInfoController {
+    private static final Logger logger = LoggerFactory.getLogger(StuInfoController.class);
 
     //全局Context
     @Autowired
@@ -28,16 +29,20 @@ public class StuInfoController {
 
     @ResponseBody
     @RequestMapping(value = "/get")
-    public String get(HttpServletRequest req) {
+    public Object get(HttpServletRequest req) {
         String number = req.getParameter("number");
         String password = req.getParameter("password");
         Map<String, Object> map = new HashMap<>();
-        Gson gson = GsonUtils.getInstance();
         String port = (String) servletContext.getAttribute("port");
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
+        if (port.equals(Constants.STRING_ERROR)) {
+            logger.info("Port error");
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
+            return map;
+        }
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password, port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
-            return gson.toJson(map);
+            return map;
         }
 //        String port = loginMap.get(Constants.STRING_PORT);
         String session = loginMap.get(Constants.STRING_SESSION);
@@ -45,11 +50,11 @@ public class StuInfoController {
         if (!stuInfoMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             System.out.println(TimeUtils.getTime() + " getStuInfo失败：" + stuInfoMap.get(Constants.STRING_SUCCESS));
             map.put(Constants.STRING_SUCCESS, stuInfoMap.get(Constants.STRING_SUCCESS));
-            return gson.toJson(map);
+            return map;
         }
         StuInfoModel stuInfoData = (StuInfoModel) stuInfoMap.get(Constants.STRING_DATA);
         stuInfoData.setPassword(password);
         map.put(Constants.STRING_DATA, stuInfoData);
-        return gson.toJson(map);
+        return map;
     }
 }

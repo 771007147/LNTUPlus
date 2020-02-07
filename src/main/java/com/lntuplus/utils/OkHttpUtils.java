@@ -2,7 +2,6 @@ package com.lntuplus.utils;
 
 import com.lntuplus.action.AsyncAction;
 import com.lntuplus.action.LoginAction;
-import com.lntuplus.controller.LoginController;
 import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,16 +22,18 @@ public class OkHttpUtils {
     private AsyncAction mAsyncAction;
 
     private static OkHttpUtils sOkHttpUtils;
-    private static final String PORT1 = "http://s2.natfrp.com:7792/academic";
-    private static final String PORT2 = "http://s2.natfrp.com:7790/newacademic";
-    private static final String PORT3 = "http://202.199.224.24:11182/academic";
-    private static final String PORT4 = "http://202.199.224.24:11080/newacademic";
+    //    private static final String PORT1 = "http://s2.natfrp.com:7792/academic";
+//    private static final String PORT2 = "http://s2.natfrp.com:7790/newacademic";
+    private static final String PORT1 = "http://s1.natfrp.com:7792/academic";
+    private static final String PORT2 = "http://s1.natfrp.com:7790/newacademic";
+    private static final String PORT3 = "http://202.199.224.24:11189/academic";
+    private static final String PORT4 = "http://202.199.224.24:11089/newacademic";
     private static final Logger logger = LoggerFactory.getLogger(OkHttpUtils.class);
 
     private static Dispatcher dispatcher = new Dispatcher();
 
     private static OkHttpClient mOkHttpClient = new OkHttpClient().newBuilder()
-            .connectTimeout(30, TimeUnit.SECONDS)// 设置连接超时时间
+            .connectTimeout(15, TimeUnit.SECONDS)// 设置连接超时时间
             .readTimeout(5, TimeUnit.SECONDS)// 设置读取超时时间
             .dispatcher(dispatcher)
             .build();
@@ -63,41 +64,48 @@ public class OkHttpUtils {
     }
 
     public String getUseablePort() {
-        String port;
+        String port = Constants.STRING_ERROR;
         Future<String> portFuture1 = getPort(PORT1);
         Future<String> portFuture2 = getPort(PORT2);
         Future<String> portFuture3 = getPort(PORT3);
         Future<String> portFuture4 = getPort(PORT4);
 
-
         long start = System.currentTimeMillis();
-        while (true) {
-            if (portFuture1.isDone()) {
-                port = PORT1;
-                break;
-            }
-            if (portFuture2.isDone()) {
-                port = PORT2;
-                break;
-            }
-            if (portFuture3.isDone()) {
-                port = PORT3;
-                break;
-            }
-            if (portFuture4.isDone()) {
-                port = PORT4;
-                break;
-            }
-            try {
+        try {
+            while (true) {
+                if (portFuture1.isDone()) {
+                    if (!portFuture1.get().equals(Constants.STRING_FAILED) && !portFuture1.get().equals(Constants.STRING_ERROR)) {
+                        port = PORT1;
+                        break;
+                    }
+                }
+                if (portFuture2.isDone()) {
+                    if (!portFuture2.get().equals(Constants.STRING_FAILED) && !portFuture2.get().equals(Constants.STRING_ERROR)) {
+                        port = PORT2;
+                        break;
+                    }
+                }
+                if (portFuture3.isDone()) {
+                    if (!portFuture3.get().equals(Constants.STRING_FAILED) && !portFuture3.get().equals(Constants.STRING_ERROR)) {
+                        port = PORT3;
+                        break;
+                    }
+                }
+                if (portFuture4.isDone()) {
+                    if (!portFuture4.get().equals(Constants.STRING_FAILED) && !portFuture4.get().equals(Constants.STRING_ERROR)) {
+                        port = PORT4;
+                        break;
+                    }
+                }
                 Thread.sleep(500);
-            } catch (Exception e) {
-                logger.error("Port thread sleep error！");
+                if ((System.currentTimeMillis() - start) / 1000 > 10) {
+                    logger.error("Port 轮询等待多线程返回超时，暂无可用端口！");
+                    port = Constants.STRING_ERROR;
+                    break;
+                }
             }
-            if ((System.currentTimeMillis() - start) / 1000 > 10) {
-                logger.error("Port 轮询等待多线程返回超时，暂无可用端口！");
-                port = Constants.STRING_ERROR;
-                break;
-            }
+        } catch (Exception e) {
+            logger.info("Get ports failed");
         }
         return port;
     }
@@ -164,18 +172,28 @@ public class OkHttpUtils {
 
     @Async
     public Future<String> getPort(String port) {
-        Call call = getExecuteCall(port + "/common/security/login.jsp");
-        try {
-            Response resp = call.execute();
-            if (resp.isSuccessful()) {
-                resp.close();
-                return new AsyncResult<>(port);
-            } else {
-                return new AsyncResult<>(Constants.STRING_FAILED);
-            }
-        } catch (Exception e) {
+        String s = getSession(port + "/common/security/login.jsp");
+        if (s.equals(Constants.STRING_FAILED)) {
+            return new AsyncResult<>(Constants.STRING_FAILED);
+        } else if (s.equals(Constants.STRING_ERROR)) {
             return new AsyncResult<>(Constants.STRING_ERROR);
+        } else {
+            return new AsyncResult<>(port);
         }
+//        Call call = getExecuteCall(port + "/common/security/login.jsp");
+//        try {
+//            Response resp = call.execute();
+//            if (resp.isSuccessful()) {
+//                String result = getSession(resp);
+//
+//                resp.close();
+//                return new AsyncResult<>(port);
+//            } else {
+//                return new AsyncResult<>(Constants.STRING_FAILED);
+//            }
+//        } catch (Exception e) {
+//            return new AsyncResult<>(Constants.STRING_ERROR);
+//        }
     }
 
 }

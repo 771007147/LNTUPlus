@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<mapper namespace="TimelineMapper">
+    <!-- statement，内容：sql语句。id：唯一标识，随便写，在同一个命名空间下保持唯一
+       resultType：sql语句查询结果集的封装类型,tb_user即为数据库中的表
+     -->
+    <select id="getMessages" resultType="com.lntuplus.model.TimelineMessageModel">
+      select * from timelineMessage order by datetime desc limit 50
+   </select>
+
+    <select id="getReplys" parameterType="Map" resultType="com.lntuplus.model.TimelineReplyModel">
+      select * from timelineReply where preid = #{preid} order by datetime desc
+   </select>
+
+    <insert id="insertMessage" parameterType="com.lntuplus.model.TimelineMessageModel">
+        insert into timelineMessage values (#{id}, #{number}, #{type}, #{name}, #{text}, #{imgUrl}, #{datetime})
+    </insert>
+
+    <insert id="insertReply" parameterType="com.lntuplus.model.TimelineReplyModel">
+        insert into timelineReply values (#{preid}, #{id}, #{number}, #{name}, #{text}, #{datetime})
+    </insert>
+
+    <select id="getTimelineShowStatus" resultType="int">
+      select status from passwechatcheck where name = 'timeline'
+   </select>
+
+</mapper>

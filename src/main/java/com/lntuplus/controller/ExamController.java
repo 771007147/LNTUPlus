@@ -1,11 +1,9 @@
 package com.lntuplus.controller;
 
-import com.google.gson.Gson;
 import com.lntuplus.action.AsyncAction;
 import com.lntuplus.action.ExamAction;
 import com.lntuplus.model.ExamModel;
 import com.lntuplus.utils.Constants;
-import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,14 +36,17 @@ public class ExamController {
         String password = req.getParameter("password");
         logger.info(number + " 开始获取考试...");
         Map<String, Object> map = new HashMap<>();
-        Gson gson = GsonUtils.getInstance();
         String port = (String) servletContext.getAttribute("port");
-
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
+        if (port.equals(Constants.STRING_ERROR)) {
+            logger.info("Port error");
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
+            return map;
+        }
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password, port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             logger.error(number + " 登录失败！");
-            return gson.toJson(map);
+            return map;
         }
         String session = loginMap.get(Constants.STRING_SESSION);
         Map<String, Object> examMap = new ExamAction().get(port, session, number);

@@ -1,10 +1,8 @@
 package com.lntuplus.controller;
 
-import com.google.gson.Gson;
 import com.lntuplus.action.TableAction;
 import com.lntuplus.model.TableModel;
 import com.lntuplus.utils.Constants;
-import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +34,12 @@ public class TableController {
         Map<String, Object> map = new HashMap<>();
         logger.info(number + " 开始获取课表...");
         String port = (String) servletContext.getAttribute("port");
-        Map<String, String> loginMap = mOkHttpUtils.login(number, password,port);
+        if (port.equals(Constants.STRING_ERROR)) {
+            logger.info("Port error");
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
+            return map;
+        }
+        Map<String, String> loginMap = mOkHttpUtils.login(number, password, port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
             logger.error(number + " 登录失败！");

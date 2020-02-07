@@ -72,6 +72,7 @@ public class SignController {
         signMap.put("sum", all.size());
         System.out.println("查询签到：");
         System.out.println("班级：" + iClass + " 日期：" + date + " 课序：" + index);
+        sqlSession.close();
         return signMap;
     }
 

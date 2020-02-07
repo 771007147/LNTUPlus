@@ -59,7 +59,7 @@ public class Evaluate {
                 map.put(Constants.STRING_DATA, data);
             }
         } catch (IOException e1) {
-            e1.printStackTrace();
+            logger.error("新生未完善个人信息！");
             map.put(Constants.STRING_SUCCESS, Constants.STRING_NEW_STU);
         }
         map.put(Constants.STRING_SUCCESS, Constants.STRING_FAILED);
@@ -88,6 +88,7 @@ public class Evaluate {
                     count++;
                     break;
                 default:
+                    logger.error("Post errors");
                     break;
             }
         }
@@ -111,8 +112,9 @@ public class Evaluate {
                 List<Map<String, String>> pageData = new ArrayList<>();
                 for (int i = 0; i < 8; i++) {
                     Map<String, String> pageMap = new HashMap<>();
-                    pageMap.put(Constants.STRING_DATA, inputs.get(i).val());
+                    pageMap.put(Constants.STRING_DATA, inputs.get(i).attr("value"));
                     pageMap.put(Constants.STRING_NAME, inputs.get(i).attr("name"));
+                    pageData.add(pageMap);
                 }
                 List<List<Map<String, String>>> infoData = new ArrayList<>();
                 for (int i = 1; i < 13; i++) {
@@ -146,6 +148,7 @@ public class Evaluate {
                 }
             }
         } catch (IOException e) {
+            logger.error("Post failed");
             return Constants.STRING_ERROR;
         }
         return Constants.STRING_ERROR;

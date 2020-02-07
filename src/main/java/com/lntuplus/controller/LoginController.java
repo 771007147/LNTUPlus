@@ -1,16 +1,12 @@
 package com.lntuplus.controller;
 
-import com.google.gson.Gson;
 import com.lntuplus.action.AsyncAction;
 import com.lntuplus.interfaces.ILoginController;
 import com.lntuplus.model.ExamModel;
 import com.lntuplus.model.StuInfoModel;
 import com.lntuplus.model.TableModel;
 import com.lntuplus.utils.Constants;
-import com.lntuplus.utils.GsonUtils;
 import com.lntuplus.utils.OkHttpUtils;
-import com.lntuplus.utils.TimeUtils;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Future;
 
 @Controller
@@ -45,15 +43,19 @@ public class LoginController implements ILoginController {
     public Object get(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         resp.setContentType("application/json; charset=utf-8");
         Map<String, Object> map = new HashMap<>();
-        Gson gson = GsonUtils.getInstance();
         String number = req.getParameter("number");
         String password = req.getParameter("password");
         logger.info(number + " 登录中...");
         String port = (String) servletContext.getAttribute("port");
+        if (port.equals(Constants.STRING_ERROR)) {
+            logger.info("Port error");
+            map.put(Constants.STRING_SUCCESS, Constants.STRING_ERROR);
+            return map;
+        }
         Map<String, String> loginMap = mOkHttpUtils.login(number, password, port);
         if (!loginMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             map.put(Constants.STRING_SUCCESS, loginMap.get(Constants.STRING_SUCCESS));
-            return gson.toJson(map);
+            return map;
         }
         String session = loginMap.get(Constants.STRING_SESSION);
 
@@ -70,6 +72,10 @@ public class LoginController implements ILoginController {
             Thread.sleep(500);
             if ((System.currentTimeMillis() - start) / 1000 > 10) {
                 logger.error("轮询等待多线程返回超时！");
+                stuInfoFuture.cancel(true);
+                scoreFuture.cancel(true);
+                examFuture.cancel(true);
+                tableFuture.cancel(true);
                 map.put(Constants.STRING_SUCCESS, Constants.STRING_TIME);
                 return map;
             }

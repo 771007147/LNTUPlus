@@ -11,8 +11,9 @@
     <properties>
         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://139.199.103.103:3306/lntuplus?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"/>
+                  value="jdbc:mysql://localhost:3306/lntuplus?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"/>
         <property name="username" value="root"/>
+        <!--                <property name="username" value="root"/>-->
         <property name="password" value="771007147"/>
     </properties>
 
@@ -41,7 +42,7 @@
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis-110"/>
                 <property name="username" value="root"/>
-                <property name="password" value="771007147"/>
+                <property name="password" value="root"/>
                 <property name="poolMaximumActiveConnections" value="200"/>
                 <property name="poolMaximumIdleConnections" value="0"/>
             </dataSource>
@@ -68,7 +69,8 @@
         <mapper resource="mappers/port-mapper.xml"/>
         <mapper resource="mappers/save-mapper.xml"/>
         <mapper resource="mappers/rank-mapper.xml"/>
-
+        <mapper resource="mappers/timeline-mapper.xml"/>
+        <mapper resource="mappers/wechatCheck-mapper.xml"/>
     </mappers>
 
 </configuration>

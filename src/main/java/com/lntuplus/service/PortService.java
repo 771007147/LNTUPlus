@@ -1,13 +1,7 @@
 package com.lntuplus.service;
 
-import com.lntuplus.action.AsyncAction;
-import com.lntuplus.controller.LoginController;
 import com.lntuplus.utils.Constants;
-import com.lntuplus.utils.DBSessionFactory;
 import com.lntuplus.utils.OkHttpUtils;
-import com.lntuplus.utils.TimeUtils;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;

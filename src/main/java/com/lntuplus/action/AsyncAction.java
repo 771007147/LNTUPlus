@@ -50,8 +50,8 @@ public class AsyncAction {
         if (scoreMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             List<Map<String, Object>> scoreData = (List<Map<String, Object>>) scoreMap.get(Constants.STRING_DATA);
             double gpa = (double) scoreMap.get(Constants.STRING_GPA);
-            mSaveAction.saveScore(scoreData);
-            mSaveAction.saveGPA(number, gpa);
+//            mSaveAction.saveScore(scoreData);
+//            mSaveAction.saveGPA(number, gpa);
         } else {
             logger.info("获取学生成绩失败!");
             return new AsyncResult<>(scoreMap);
@@ -66,7 +66,7 @@ public class AsyncAction {
         Map<String, Object> examMap = new ExamAction().get(port, session, number);
         if (examMap.get(Constants.STRING_SUCCESS).equals(Constants.STRING_SUCCESS)) {
             List<ExamModel> examData = (List<ExamModel>) examMap.get(Constants.STRING_DATA);
-            mSaveAction.saveExam(examData);
+//            mSaveAction.saveExam(examData);
         } else {
             logger.info("获取学生考试失败!");
             return new AsyncResult<>(examMap);
@@ -93,15 +93,15 @@ public class AsyncAction {
     @Async
     public void saveScore(List<Map<String, Object>> scoreData, String number, double gpa) {
         logger.info("保存学生成绩...");
-        mSaveAction.saveScore(scoreData);
-        mSaveAction.saveGPA(number, gpa);
+//        mSaveAction.saveScore(scoreData);
+//        mSaveAction.saveGPA(number, gpa);
         logger.info("保存学生成绩完毕!");
     }
 
     @Async
     public void saveExam(List<ExamModel> examData) {
         logger.info("保存学生考试...");
-        mSaveAction.saveExam(examData);
+//        mSaveAction.saveExam(examData);
         logger.info("保存学生考试完毕!");
     }
 }

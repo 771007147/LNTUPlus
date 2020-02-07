@@ -142,6 +142,6 @@
     <input type="submit" style="width:80px;"/>
 </form>
 
-<%= request.getServletContext().getRealPath("/")%>
+<%--<%= request.getServletContext().getRealPath("/")%>--%>
 </body>
 </html>
